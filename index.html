@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Notes App</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <!-- Subject 1 -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="subject1Dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Subject 1
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="subject1Dropdown">
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject1/chapter1.txt')">Chapter 1</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject1/chapter2.txt')">Chapter 2</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject1/chapter3.txt')">Chapter 3</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject1/chapter4.txt')">Chapter 4</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject1/chapter5.txt')">Chapter 5</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject1/chapter6.txt')">Chapter 6</a>
+                    </div>
+                </li>
+                <!-- Subject 2 -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="subject2Dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Subject 2
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="subject2Dropdown">
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject2/chapter1.txt')">Chapter 1</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject2/chapter2.txt')">Chapter 2</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject2/chapter3.txt')">Chapter 3</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject2/chapter4.txt')">Chapter 4</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject2/chapter5.txt')">Chapter 5</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject2/chapter6.txt')">Chapter 6</a>
+                    </div>
+                </li>
+                <!-- Subject 3 -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="subject3Dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Subject 3
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="subject3Dropdown">
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject3/chapter1.txt')">Chapter 1</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject3/chapter2.txt')">Chapter 2</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject3/chapter3.txt')">Chapter 3</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject3/chapter4.txt')">Chapter 4</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject3/chapter5.txt')">Chapter 5</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject3/chapter6.txt')">Chapter 6</a>
+                    </div>
+                </li>
+                <!-- Subject 4 -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="subject4Dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Subject 4
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="subject4Dropdown">
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject4/chapter1.txt')">Chapter 1</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject4/chapter2.txt')">Chapter 2</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject4/chapter3.txt')">Chapter 3</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject4/chapter4.txt')">Chapter 4</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject4/chapter5.txt')">Chapter 5</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject4/chapter6.txt')">Chapter 6</a>
+                    </div>
+                </li>
+                <!-- Subject 5 -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="subject5Dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Subject 5
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="subject5Dropdown">
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject5/chapter1.txt')">Chapter 1</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject5/chapter2.txt')">Chapter 2</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject5/chapter3.txt')">Chapter 3</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject5/chapter4.txt')">Chapter 4</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject5/chapter5.txt')">Chapter 5</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject5/chapter6.txt')">Chapter 6</a>
+                    </div>
+                </li>
+                <!-- Subject 6 -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="subject6Dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Subject 6
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="subject6Dropdown">
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject6/chapter1.txt')">Chapter 1</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject6/chapter2.txt')">Chapter 2</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject6/chapter3.txt')">Chapter 3</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject6/chapter4.txt')">Chapter 4</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject6/chapter5.txt')">Chapter 5</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject6/chapter6.txt')">Chapter 6</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Content Area -->
+    <div class="container mt-4">
+        <h1>Welcome to the Notes App</h1>
+        <p>Select a subject and chapter from the navigation bar.</p>
+        <div id="chapter-content" class="border rounded p-3"></div>
+    </div>
+
+    <!-- Bootstrap and jQuery JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Custom Script -->
+    <script src="js/script.js"></script>
+</body>
+</html>
