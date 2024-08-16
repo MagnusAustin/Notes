@@ -1,3 +1,4 @@
+// Function to load chapter content
 function loadChapter(chapterPath) {
     fetch(chapterPath)
         .then(response => {
@@ -13,3 +14,18 @@ function loadChapter(chapterPath) {
             document.getElementById('chapter-content').innerHTML = 'Error loading chapter: ' + error;
         });
 }
+
+// Dark mode toggle functionality
+document.getElementById('darkModeToggle').addEventListener('click', function() {
+    document.body.classList.toggle('dark-mode');
+    let navbar = document.getElementById('navbar');
+    navbar.classList.toggle('navbar-light');
+    navbar.classList.toggle('bg-light');
+    navbar.classList.toggle('navbar-dark-mode');
+
+    if (document.body.classList.contains('dark-mode')) {
+        this.textContent = 'Light Mode';
+    } else {
+        this.textContent = 'Dark Mode';
+    }
+});
