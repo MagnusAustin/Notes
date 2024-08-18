@@ -32,12 +32,13 @@
             color: #e0e0e0 !important;
         }
         #chapter-content {
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-            max-width: 100%;
-            box-sizing: border-box;
+            word-wrap: break-word; /* Wraps long words */
+            overflow-wrap: break-word; /* Breaks long words if needed */
+            max-width: 100%; /* Ensures content fits within container */
+            box-sizing: border-box; /* Includes padding and border in element's total width and height */
+            white-space: normal; /* Default behavior for whitespace handling */
         }
+
         /* Navbar toggle color for dark mode */
         .navbar-dark-mode .navbar-toggler-icon {
             background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="%23e0e0e0" viewBox="0 0 24 24"%3E%3Cpath d="M4 6h16v2H4zm0 4h16v2H4zm0 4h16v2H4z"/%3E%3C/svg%3E');
@@ -45,6 +46,11 @@
         /* Optional: Adjust color for toggle button */
         .navbar-dark-mode .navbar-toggler {
             border-color: #e0e0e0;
+        }
+        /* Ensure responsive images and proper content wrapping */
+        img {
+            max-width: 100%;
+            height: auto;
         }
     </style>
 </head>
@@ -63,26 +69,26 @@
                         IOE
                     </a>
                     <div class="dropdown-menu" aria-labelledby="IOEDropdown">
-                        <a class="dropdown-item" href="#" onclick="loadChapter('IOE/chapter1.txt')">Chapter 1</a>
-                        <a class="dropdown-item" href="#" onclick="loadChapter('IOE/chapter2.txt')">Chapter 2</a>
-                        <a class="dropdown-item" href="#" onclick="loadChapter('IOE/chapter3.txt')">Chapter 3</a>
-                        <a class="dropdown-item" href="#" onclick="loadChapter('IOE/chapter4.txt')">Chapter 4</a>
-                        <a class="dropdown-item" href="#" onclick="loadChapter('IOE/chapter5.txt')">Chapter 5</a>
-                        <a class="dropdown-item" href="#" onclick="loadChapter('IOE/chapter6.txt')">Chapter 6</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('IOE/chapter1.html')">Chapter 1</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('IOE/chapter2.html')">Chapter 2</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('IOE/chapter3.html')">Chapter 3</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('IOE/chapter4.html')">Chapter 4</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('IOE/chapter5.html')">Chapter 5</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('IOE/chapter6.html')">Chapter 6</a>
                     </div>
                 </li>
                 <!-- Subject 2 -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="subject2Dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Subject 2
+                    <a class="nav-link dropdown-toggle" href="#" id="ISDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        IS
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="subject2Dropdown">
-                        <a class="dropdown-item" href="#" onclick="loadChapter('subject2/chapter1.txt')">Chapter 1</a>
-                        <a class="dropdown-item" href="#" onclick="loadChapter('subject2/chapter2.txt')">Chapter 2</a>
-                        <a class="dropdown-item" href="#" onclick="loadChapter('subject2/chapter3.txt')">Chapter 3</a>
-                        <a class="dropdown-item" href="#" onclick="loadChapter('subject2/chapter4.txt')">Chapter 4</a>
-                        <a class="dropdown-item" href="#" onclick="loadChapter('subject2/chapter5.txt')">Chapter 5</a>
-                        <a class="dropdown-item" href="#" onclick="loadChapter('subject2/chapter6.txt')">Chapter 6</a>
+                    <div class="dropdown-menu" aria-labelledby="ISDropdown">
+                        <a class="dropdown-item" href="#" onclick="loadChapter('IS/chapter1.html')">Chapter 1</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('IS/chapter2.html')">Chapter 2</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('IS/chapter3.html')">Chapter 3</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('IS/chapter4.html')">Chapter 4</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('IS/chapter5.html')">Chapter 5</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('IS/chapter6.html')">Chapter 6</a>
                     </div>
                 </li>
                 <!-- Subject 3 -->
@@ -91,12 +97,12 @@
                         Subject 3
                     </a>
                     <div class="dropdown-menu" aria-labelledby="subject3Dropdown">
-                        <a class="dropdown-item" href="#" onclick="loadChapter('subject3/chapter1.txt')">Chapter 1</a>
-                        <a class="dropdown-item" href="#" onclick="loadChapter('subject3/chapter2.txt')">Chapter 2</a>
-                        <a class="dropdown-item" href="#" onclick="loadChapter('subject3/chapter3.txt')">Chapter 3</a>
-                        <a class="dropdown-item" href="#" onclick="loadChapter('subject3/chapter4.txt')">Chapter 4</a>
-                        <a class="dropdown-item" href="#" onclick="loadChapter('subject3/chapter5.txt')">Chapter 5</a>
-                        <a class="dropdown-item" href="#" onclick="loadChapter('subject3/chapter6.txt')">Chapter 6</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject3/chapter1.html')">Chapter 1</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject3/chapter2.html')">Chapter 2</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject3/chapter3.html')">Chapter 3</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject3/chapter4.html')">Chapter 4</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject3/chapter5.html')">Chapter 5</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject3/chapter6.html')">Chapter 6</a>
                     </div>
                 </li>
                 <!-- Subject 4 -->
@@ -105,12 +111,12 @@
                         Subject 4
                     </a>
                     <div class="dropdown-menu" aria-labelledby="subject4Dropdown">
-                        <a class="dropdown-item" href="#" onclick="loadChapter('subject4/chapter1.txt')">Chapter 1</a>
-                        <a class="dropdown-item" href="#" onclick="loadChapter('subject4/chapter2.txt')">Chapter 2</a>
-                        <a class="dropdown-item" href="#" onclick="loadChapter('subject4/chapter3.txt')">Chapter 3</a>
-                        <a class="dropdown-item" href="#" onclick="loadChapter('subject4/chapter4.txt')">Chapter 4</a>
-                        <a class="dropdown-item" href="#" onclick="loadChapter('subject4/chapter5.txt')">Chapter 5</a>
-                        <a class="dropdown-item" href="#" onclick="loadChapter('subject4/chapter6.txt')">Chapter 6</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject4/chapter1.html')">Chapter 1</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject4/chapter2.html')">Chapter 2</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject4/chapter3.html')">Chapter 3</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject4/chapter4.html')">Chapter 4</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject4/chapter5.html')">Chapter 5</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject4/chapter6.html')">Chapter 6</a>
                     </div>
                 </li>
                 <!-- Subject 5 -->
@@ -119,12 +125,12 @@
                         Subject 5
                     </a>
                     <div class="dropdown-menu" aria-labelledby="subject5Dropdown">
-                        <a class="dropdown-item" href="#" onclick="loadChapter('subject5/chapter1.txt')">Chapter 1</a>
-                        <a class="dropdown-item" href="#" onclick="loadChapter('subject5/chapter2.txt')">Chapter 2</a>
-                        <a class="dropdown-item" href="#" onclick="loadChapter('subject5/chapter3.txt')">Chapter 3</a>
-                        <a class="dropdown-item" href="#" onclick="loadChapter('subject5/chapter4.txt')">Chapter 4</a>
-                        <a class="dropdown-item" href="#" onclick="loadChapter('subject5/chapter5.txt')">Chapter 5</a>
-                        <a class="dropdown-item" href="#" onclick="loadChapter('subject5/chapter6.txt')">Chapter 6</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject5/chapter1.html')">Chapter 1</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject5/chapter2.html')">Chapter 2</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject5/chapter3.html')">Chapter 3</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject5/chapter4.html')">Chapter 4</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject5/chapter5.html')">Chapter 5</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject5/chapter6.html')">Chapter 6</a>
                     </div>
                 </li>
                 <!-- Subject 6 -->
@@ -133,12 +139,12 @@
                         Subject 6
                     </a>
                     <div class="dropdown-menu" aria-labelledby="subject6Dropdown">
-                        <a class="dropdown-item" href="#" onclick="loadChapter('subject6/chapter1.txt')">Chapter 1</a>
-                        <a class="dropdown-item" href="#" onclick="loadChapter('subject6/chapter2.txt')">Chapter 2</a>
-                        <a class="dropdown-item" href="#" onclick="loadChapter('subject6/chapter3.txt')">Chapter 3</a>
-                        <a class="dropdown-item" href="#" onclick="loadChapter('subject6/chapter4.txt')">Chapter 4</a>
-                        <a class="dropdown-item" href="#" onclick="loadChapter('subject6/chapter5.txt')">Chapter 5</a>
-                        <a class="dropdown-item" href="#" onclick="loadChapter('subject6/chapter6.txt')">Chapter 6</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject6/chapter1.html')">Chapter 1</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject6/chapter2.html')">Chapter 2</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject6/chapter3.html')">Chapter 3</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject6/chapter4.html')">Chapter 4</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject6/chapter5.html')">Chapter 5</a>
+                        <a class="dropdown-item" href="#" onclick="loadChapter('subject6/chapter6.html')">Chapter 6</a>
                     </div>
                 </li>
             </ul>
@@ -162,5 +168,6 @@
 
     <!-- Custom Script -->
     <script src="js/script.js"></script>
+    
 </body>
 </html>

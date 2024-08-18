@@ -8,7 +8,8 @@ function loadChapter(chapterPath) {
             return response.text();
         })
         .then(data => {
-            document.getElementById('chapter-content').innerHTML = `<pre>${data}</pre>`;
+            // Directly inserting HTML content without the <pre> tag to allow HTML rendering
+            document.getElementById('chapter-content').innerHTML = data;
         })
         .catch(error => {
             document.getElementById('chapter-content').innerHTML = 'Error loading chapter: ' + error;
