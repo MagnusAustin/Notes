@@ -1,0 +1,101 @@
+1. **Cyber Attack**  
+   - A deliberate attempt to exploit computer systems, networks, or devices.  
+   - **Types of Cyberattacks:**
+     1. **Phishing**: Deceptive attempts to obtain sensitive information via fraudulent emails.
+     2. **Malware**: Software designed to damage, disrupt, or gain unauthorized access to systems.
+     3. **Denial of Service (DoS)**: Overloading systems to disrupt services.
+     4. **Man-in-the-Middle (MitM)**: Intercepting and altering communications between two parties.
+     5. **Ransomware**: Malware that encrypts data and demands payment for decryption.
+
+2. **Vulnerability**  
+   - A weakness in a system that can be exploited to cause harm.  
+   - **Classes of Vulnerability:**
+     1. **Software Vulnerabilities**: Flaws in software code like bugs or unpatched systems.
+     2. **Hardware Vulnerabilities**: Weaknesses in physical components, such as chip-level flaws.
+     3. **Network Vulnerabilities**: Issues in network configurations or protocols.
+     4. **Human Vulnerabilities**: Human errors, such as weak passwords or phishing susceptibility.
+     5. **Process Vulnerabilities**: Inadequate security policies or procedures.
+
+3. **Authentication Methods**  
+   - **Types:**
+     1. **Password-based Authentication**: User credentials are matched against stored passwords.
+     2. **Multi-Factor Authentication (MFA)**: Requires two or more authentication factors.
+     3. **Biometric Authentication**: Uses unique biological traits, such as fingerprints.
+     4. **Token-based Authentication**: Involves a physical or digital token.
+     5. **Certificate-based Authentication**: Uses digital certificates to verify identity.
+
+4. **Access Control Policies**  
+   - **Types:**
+     1. **Discretionary Access Control (DAC)**: Users have control over access to their resources.
+     2. **Mandatory Access Control (MAC)**: Access is dictated by central authority based on classifications.
+     3. **Role-Based Access Control (RBAC)**: Access is assigned based on roles within an organization.
+     4. **Attribute-Based Access Control (ABAC)**: Access is determined by policies using attributes.
+     5. **Rule-Based Access Control**: Access based on a set of rules defined by the system administrator.
+
+5. **Authentication Using Tokens**  
+   - Tokens are generated and exchanged during the authentication process.
+     1. **Process**: User credentials are validated, and a token is issued.
+     2. **Token Use**: The token is used for subsequent requests without re-entering credentials.
+     3. **Session Management**: Tokens can be time-bound and revoked when a session ends.
+     4. **Types of Tokens**: JSON Web Tokens (JWT), OAuth tokens, etc.
+     5. **Security**: Tokens are encrypted to ensure secure transmission.
+
+6. **RBAC vs. ABAC**  
+   - **Role-Based Access Control (RBAC):**
+     1. Access is granted based on roles.
+     2. Easier to manage in static environments.
+     3. Simplifies access control by grouping users.
+     4. Less flexible in dynamic environments.
+     5. Best for organizations with clearly defined roles.
+   - **Attribute-Based Access Control (ABAC):**
+     1. Access decisions based on attributes like user, environment, and resource.
+     2. More granular and flexible.
+     3. Suitable for dynamic and complex environments.
+     4. Policy-based and scalable.
+     5. Requires careful planning and management of attributes.
+
+7. **Access Control in BIBA Model**  
+   - The BIBA model is focused on data integrity.
+     1. **No Write Up**: Users cannot write data to a higher integrity level.
+     2. **No Read Down**: Users cannot read data from a lower integrity level.
+     3. **Strict Integrity**: Prevents unauthorized data modifications.
+     4. **Invocation Property**: Ensures that subjects cannot invoke objects at a higher integrity level.
+     5. **Access Control**: Achieved through rules that maintain data integrity and prevent corruption.
+
+8. **CIA Triad Model of Network Security**  
+   - **Components:**
+     1. **Confidentiality**: Ensures that information is only accessible to those authorized.
+     2. **Integrity**: Ensures data accuracy and consistency, preventing unauthorized modifications.
+     3. **Availability**: Ensures that data and resources are available to authorized users when needed.
+     4. **Protection Measures**: Encryption for confidentiality, checksums for integrity, redundancy for availability.
+     5. **Balanced Security**: Effective security solutions consider all three components.
+
+9. **Bell LaPadula (BLP) Model**  
+   - **Access Modes:**
+     1. **Read (Simple Security Property)**: No read up – users cannot read data at a higher security level.
+     2. **Write (Star Property)**: No write down – users cannot write data to a lower security level.
+     3. **Access Modes**: Read, Write, Append.
+     4. **Security Levels**: Confidentiality-focused with clearances and classification levels.
+     5. **Properties**: Enforces strict confidentiality controls to prevent data leakage.
+
+10. **Attribute-Based Access Control (ABAC)**  
+    - Access is granted based on multiple attributes.
+      1. **Attributes**: Include user characteristics, resource characteristics, environment conditions.
+      2. **Policy-based**: Access decisions are made based on policies combining these attributes.
+      3. **Flexibility**: Allows for complex access controls in dynamic environments.
+      4. **Scalability**: Scales well with large, diverse organizations.
+      5. **Granularity**: Provides fine-grained control over access.
+
+11. **Defense Strategies and Techniques**  
+    - **Strategies:**
+      1. **Defense in Depth**: Layered security measures to protect against attacks.
+      2. **Zero Trust**: No implicit trust; every access request must be verified.
+      3. **Least Privilege**: Users are given the minimum access necessary.
+      4. **Segmentation**: Dividing networks to contain breaches.
+      5. **Redundancy**: Backup systems and processes to ensure availability.
+    - **Techniques:**
+      1. **Encryption**: Protects data in transit and at rest.
+      2. **Firewalls**: Monitor and control incoming and outgoing network traffic.
+      3. **Intrusion Detection Systems (IDS)**: Detect and respond to potential threats.
+      4. **Patching**: Regularly updating software to fix vulnerabilities.
+      5. **User Education**: Training users on security best practices.
