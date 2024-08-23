@@ -1,211 +1,379 @@
->
-        <ul>
-            <li>Each document is assigned a similarity score based on the ratio of its probability of being relevant to the probability of being non-relevant.</li>
-            <li>Documents are ranked in decreasing order of their probability of relevance.</li>
-        </ul>
-    </li>
-    <li><strong>Advantages:</strong>
-        <ul>
-            <li>Documents are theoretically ranked by their probability of being relevant, which can improve retrieval accuracy.</li>
-        </ul>
-    </li>
-    <li><strong>Disadvantages:</strong>
-        <ul>
-            <li><strong>Initial Guess:</strong> The need to guess the initial separation of documents into relevant and non-relevant sets.</li>
-            <li><strong>Binary Weights:</strong> The model does not consider the frequency of index terms within documents; all weights are binary.</li>
-            <li><strong>Independence Assumption:</strong> Assumes index terms are independent, which may not always be practical. However, this assumption’s impact is unclear.</li>
-        </ul>
-    </li>
-</ul>
-
-<h2>5. Fuzzy Set Model</h2>
-<ul>
-    <li><strong>Core Concept:</strong>
-        <ul>
-            <li>The Fuzzy Set Model is based on fuzzy set theory, which deals with classes that have undefined boundaries.</li>
-            <li>It models the approximate or vague matching between documents and queries by assigning degrees of membership (between 0 and 1) to documents in fuzzy sets defined by query terms.</li>
-        </ul>
-    </li>
-    <li><strong>Fuzzy Set Theory:</strong>
-        <ul>
-            <li><strong>Membership Function:</strong> Represents the degree of membership of elements in a fuzzy set, with values ranging from 0 (no membership) to 1 (full membership).</li>
-            <li><strong>Key Operations:</strong>
-                <ul>
-                    <li><strong>Complement:</strong> The opposite of a fuzzy set.</li>
-                    <li><strong>Union:</strong> Combination of two or more fuzzy sets.</li>
-                    <li><strong>Intersection:</strong> Common elements of two or more fuzzy sets.</li>
-                </ul>
-            </li>
-            <li>Fuzzy sets are used to represent vagueness and imprecision in various domains.</li>
-        </ul>
-    </li>
-    <li><strong>Fuzzy Information Retrieval:</strong>
-        <ul>
-            <li><strong>Query Expansion:</strong> The set of index terms in a query is expanded with related terms from a thesaurus, allowing the retrieval of additional relevant documents.</li>
-            <li><strong>Term-Term Correlation:</strong> Uses a correlation matrix to calculate the relationship between a document and its fuzzy index terms.</li>
-            <li><strong>Algebraic Operations:</strong> Adopts algebraic sums and products (rather than max and min) to compute the overall degree of membership of a document in the fuzzy set defined by the query.</li>
-        </ul>
-    </li>
-    <li><strong>Fuzzy Retrieval Features:</strong>
-        <ul>
-            <li><strong>Spelling Variations:</strong> Locates similar spellings of words to account for spelling errors, increasing recall but potentially decreasing precision.</li>
-            <li><strong>Search Expansion:</strong> Includes terms with similar spellings and structures to the query term, giving more weight to those with similar word lengths and character positions.</li>
-            <li><strong>Example:</strong> A fuzzy search for "computer" might include "compiter," "computter," and "compute." It may exclude unrelated valid words (e.g., "commuter") or include them with a lower ranking.</li>
-        </ul>
-    </li>
-    <li><strong>Practical Use:</strong>
-        <ul>
-            <li>Fuzzy retrieval systems may allow users to specify the maximum number of terms included in the expanded query.</li>
-        </ul>
-    </li>
-</ul>
-
-<h2>6. Extended Boolean Model</h2>
-<ul>
-    <li><strong>Core Concept:</strong>
-        <ul>
-            <li>The Extended Boolean Model enhances the classic Boolean model by incorporating partial matching and term weighting, combining features of both Boolean and vector models.</li>
-        </ul>
-    </li>
-    <li><strong>Limitations of Traditional Boolean Retrieval:</strong>
-        <ul>
-            <li>No term weighting, leading to the absence of ranking in the answer set.</li>
-            <li>Results may be either too large or too small.</li>
-            <li>Modern IR systems have largely moved away from the Boolean model due to these limitations.</li>
-        </ul>
-    </li>
-    <li><strong>Adoption of Vector Model:</strong>
-        <ul>
-            <li>Most modern systems use vector retrieval because it is simple, fast, and provides better retrieval performance.</li>
-            <li>The Extended Boolean Model is an alternative approach that integrates Boolean query formulations with the vector model's characteristics.</li>
-        </ul>
-    </li>
-    <li><strong>Term Weighting:</strong>
-        <ul>
-            <li>Involves assigning importance to an index term based on its representation of the associated concept in the document.</li>
-            <li>Weighting helps differentiate the extent to which a concept is described in items within the database.</li>
-            <li>Term weights are typically normalized between 0 and 1, with higher weights indicating stronger representation of the concept.</li>
-        </ul>
-    </li>
-    <li><strong>Challenges with Manual Weighting:</strong>
-        <ul>
-            <li>Manual assignment of weights adds complexity and overhead for the indexer.</li>
-            <li>Requires more complex data structures to store weights.</li>
-        </ul>
-    </li>
-    <li><strong>Query Process:</strong>
-        <ul>
-            <li>Weights assigned to index terms are used to calculate a scalar rank value, predicting the likelihood that an item satisfies the query.</li>
-            <li>Results are presented in descending order of rank value, with weights reflecting the significance users place on each term.</li>
-        </ul>
-    </li>
-</ul>
-
-<h2>7. Structured Text Model</h2>
-<ul>
-    <li><strong>Structured Text Retrieval Model Overview:</strong>
-        <ul>
-            <li><strong>Core Idea:</strong> Structured text retrieval models combine information on text content with document structure, allowing more complex and precise queries.</li>
-        </ul>
-    </li>
-    <li><strong>Types of Structured Text Retrieval Models:</strong>
-        <ul>
-            <li><strong>Model Based on Non-Overlapping Lists:</strong>
-                <ul>
-                    <li><strong>Proposed by Burkowski:</strong> Documents are divided into non-overlapping text regions (e.g., chapters, sections, subsections) collected into separate lists.</li>
-                    <li>Multiple lists are created for different types of text divisions.</li>
-                    <li>A single inverted file is built for searching both index terms and text regions.</li>
-                    <li>Queries can select regions based on the presence or absence of words or other regions.</li>
-                    <li><strong>Query Examples:</strong>
-                        <ul>
-                            <li>Select a region containing a specific word.</li>
-                            <li>Select a region not containing any other region.</li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li><strong>Model Based on Proximal Nodes:</strong>
-                <ul>
-                    <li><strong>Proposed by Navarro and Baeza-Yates:</strong> Allows the creation of independent hierarchical indexing structures (e.g., chapters, sections, paragraphs) over the same document text.</li>
-                    <li>Nodes in these hierarchies represent text regions, and distinct hierarchies may overlap.</li>
-                    <li>Queries refer to nodes from only one hierarchy, enabling faster query processing but reducing expressiveness.</li>
-                    <li>Hierarchical indexing supports nested text regions in the answer set.</li>
-                    <li><strong>Example:</strong> Searching for sections containing the word "holocaust" involves traversing the inverted list and matching structural components in the hierarchy.</li>
-                    <li>The query language supports regular expressions, references to structural components, and their combinations, balancing expressiveness and efficiency.</li>
-                </ul>
-            </li>
-        </ul>
-    </li>
-</ul>
-
-<h2>8. Models for Browsing</h2>
-<ul>
-    <li><strong>General Overview:</strong>
-        <ul>
-            <li><strong>Browsing vs. Searching:</strong>
-                <ul>
-                    <li><strong>Browsing:</strong> The user explores the document space looking for interesting references without posing a specific query.</li>
-                    <li><strong>Searching:</strong> The user has a clearer goal and poses specific queries to find information.</li>
-                </ul>
-            </li>
-        </ul>
-    </li>
-    <li><strong>Types of Browsing:</strong>
-        <ul>
-            <li><strong>Flat Browsing:</strong>
-                <ul>
-                    <li><strong>Flat Organization:</strong> The user explores documents organized in a flat manner (e.g., dots on a 2D plane, or a list).</li>
-                    <li><strong>Exploration:</strong> The user searches for correlations among documents or keywords of interest.</li>
-                    <li>Keywords found during browsing can be added to
-
- the original query for better contextualization (relevance feedback).</li>
-                    <li><strong>Example:</strong> Browsing a web page using arrows and scrollbars.</li>
-                    <li><strong>Disadvantage:</strong> There may be no indication of the broader context on the current page or screen.</li>
-                </ul>
-            </li>
-            <li><strong>Structure Guided Browsing:</strong>
-                <ul>
-                    <li><strong>Hierarchical Organization:</strong> Documents are organized in a structured hierarchy, such as directories grouping related topics.</li>
-                    <li><strong>Example:</strong> Browsing an electronic book where chapters, sections, and text form different levels of content.</li>
-                    <li><strong>User Interface:</strong> A good UI allows moving up or down these levels, helping the user keep track of context.</li>
-                    <li>Additional features like a history map can identify recently visited classes, useful for navigating large structures.</li>
-                </ul>
-            </li>
-        </ul>
-    </li>
-</ul>
-
-<h2>9. Hypertext Model</h2>
-<ul>
-    <li><strong>Key Concepts:</strong>
-        <ul>
-            <li><strong>Sequential Nature of Written Text:</strong> Written text is typically designed to be read in a sequence.</li>
-            <li>Skipping portions of the text can lead to miscommunication and loss of the writer's intended message.</li>
-            <li>Sequential reading is essential to fully grasp the writer’s message.</li>
-            <li><strong>Need for Non-Sequential Access:</strong> Sometimes, specific information (e.g., regional wars in Europe) is hard to find through sequential reading.</li>
-            <li>A different organizational structure is needed to access such specific information.</li>
-        </ul>
-    </li>
-    <li><strong>Hypertext:</strong>
-        <ul>
-            <li><strong>Definition:</strong> Hypertext is an interactive navigational structure that allows non-sequential browsing of text on a computer screen.</li>
-            <li>It consists of <strong>nodes</strong> (text regions) connected by <strong>directed links</strong> forming a graph structure.</li>
-            <li><strong>Nodes and Links:</strong>
-                <ul>
-                    <li>Each node represents a text region (e.g., chapter, section, Web page).</li>
-                    <li>Links between nodes allow movement from one text region to another (e.g., moving from node A to node B).</li>
-                    <li>Links are often attached to specific strings in the text, marked for user interaction (e.g., different color, underlined).</li>
-                </ul>
-            </li>
-            <li><strong>User Interaction:</strong>
-                <ul>
-                    <li>Clicking on a marked string in the text follows the directed link to a new text region.</li>
-                    <li>The process of navigating through hypertext is like traversing a directed graph, visualizing a flow of information designed by the hypertext creator.</li>
-                </ul>
-            </li>
-        </ul>
-    </li>
-</ul>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information Retrieval Models</title>
+</head>
+<body>
+    <h1>Information Retrieval Models</h1>
+    
+    <h2>1. Classic Information Retrieval</h2>
+    <ul>
+        <li><strong>Index Terms</strong>:
+            <ul>
+                <li>Documents are described by representative keywords called index terms, which summarize document contents.</li>
+                <li>Index terms are typically nouns as they carry more semantic meaning, while adjectives, adverbs, and connectives are less useful.</li>
+            </ul>
+        </li>
+        <li><strong>Importance of Index Terms</strong>:
+            <ul>
+                <li>Not all index terms are equally useful; some are vaguer and less informative.</li>
+                <li>The significance of an index term in summarizing a document's content can be evaluated based on certain measurable properties.</li>
+                <li>Terms that appear in many documents (e.g., common words) are less useful, while those that appear in fewer documents are more informative.</li>
+            </ul>
+        </li>
+        <li><strong>Numerical Weights</strong>:
+            <ul>
+                <li>Index terms are assigned numerical weights to quantify their importance in describing a document's semantic content.</li>
+                <li>These weights are usually assumed to be mutually independent, simplifying the computation and allowing for faster ranking.</li>
+            </ul>
+        </li>
+        <li><strong>Mutual Independence</strong>:
+            <ul>
+                <li>Although index terms in a document can be correlated (e.g., "computer" and "network"), mutual independence simplifies the weighting process.</li>
+                <li>Exploiting index term correlations for document ranking is complex and often not beneficial in general collections.</li>
+            </ul>
+        </li>
+        <li><strong>Simplification and Practicality</strong>:
+            <ul>
+                <li>Assuming mutual independence among index terms, despite being a simplification, is a practical approach for efficient ranking computation.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>2. Boolean-based Model</h2>
+    <ul>
+        <li><strong>Boolean Model Overview</strong>:
+            <ul>
+                <li>A simple retrieval model based on set theory and Boolean algebra.</li>
+                <li>Provides an intuitive framework, making it easy for users to understand and use.</li>
+                <li>Queries are specified as Boolean expressions with precise semantics.</li>
+                <li>Widely adopted by early commercial bibliographic systems due to its simplicity and formalism.</li>
+            </ul>
+        </li>
+        <li><strong>Drawbacks of the Boolean Model</strong>:
+            <ul>
+                <li><strong>Binary Decision Criterion</strong>: Predicts documents as either relevant or non-relevant with no grading scale, limiting retrieval performance. More suitable for data retrieval rather than information retrieval.</li>
+                <li><strong>Complex Query Formulation</strong>: Translating an information need into a Boolean expression is challenging and often awkward for users. Users tend to formulate simple Boolean expressions, which may not capture their information needs effectively.</li>
+            </ul>
+        </li>
+        <li><strong>Index Terms in Boolean Model</strong>:
+            <ul>
+                <li>Considers index terms as either present or absent in a document, resulting in binary weights (0 or 1).</li>
+                <li>Queries are composed of index terms linked by Boolean connectives: NOT, AND, OR.</li>
+                <li>Queries can be represented in Disjunctive Normal Form (DNF).</li>
+            </ul>
+        </li>
+        <li><strong>Relevance Prediction</strong>:
+            <ul>
+                <li>Documents are predicted to be either relevant or non-relevant, with no partial matching. This can lead to retrieval of too few or too many documents.</li>
+            </ul>
+        </li>
+        <li><strong>Advantages and Disadvantages</strong>:
+            <ul>
+                <li><strong>Advantages</strong>: Clean formalism and simplicity.</li>
+                <li><strong>Disadvantages</strong>: Exact matching may result in inefficient retrieval, either retrieving too few or too many documents.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>3. Vector-based Model</h2>
+    <ul>
+        <li><strong>Vector Model Overview</strong>:
+            <ul>
+                <li>Proposes a framework where partial matching is possible by assigning non-binary weights to index terms in queries and documents.</li>
+                <li>These term weights are used to compute the degree of similarity between a document and a user query.</li>
+                <li>Documents are ranked in decreasing order of similarity, leading to more precise results compared to the Boolean model.</li>
+            </ul>
+        </li>
+        <li><strong>Document Representation</strong>:
+            <ul>
+                <li>Documents and queries are represented as t-dimensional vectors.</li>
+                <li>The degree of similarity between a document and a query is evaluated as the correlation between their vectors, often quantified by the cosine of the angle between them.</li>
+            </ul>
+        </li>
+        <li><strong>Ranking and Retrieval</strong>:
+            <ul>
+                <li>The model ranks documents according to their degree of similarity to the query, allowing retrieval of documents that partially match the query.</li>
+                <li>A threshold can be established on the similarity score to retrieve documents with a similarity above that threshold.</li>
+            </ul>
+        </li>
+        <li><strong>Term-Weighting Scheme</strong>:
+            <ul>
+                <li><strong>Intra-Cluster Similarity</strong>: Measured by term frequency (tf), which quantifies how well a term describes a document’s contents.</li>
+                <li><strong>Inter-Cluster Dissimilarity</strong>: Measured by inverse document frequency (idf), which quantifies how well a term distinguishes relevant documents from non-relevant ones.</li>
+                <li>Effective term-weighting balances intra-cluster similarity (tf) and inter-cluster dissimilarity (idf).</li>
+            </ul>
+        </li>
+        <li><strong>Advantages of the Vector Model</strong>:
+            <ul>
+                <li>Improved retrieval performance due to the term-weighting scheme.</li>
+                <li>Partial matching strategy allows for retrieval of documents that approximate the query conditions.</li>
+                <li>Cosine ranking formula effectively sorts documents by similarity to the query.</li>
+            </ul>
+        </li>
+        <li><strong>Disadvantages</strong>:
+            <ul>
+                <li>Assumes mutual independence of index terms, which might not account for term dependencies.</li>
+                <li>Indiscriminate application of term dependencies can hurt overall performance.</li>
+            </ul>
+        </li>
+        <li><strong>Practical Considerations</strong>:
+            <ul>
+                <li>Despite theoretical disadvantages, the vector model is a resilient ranking strategy and remains popular due to its simplicity, speed, and effectiveness.</li>
+                <li>Compared to other ranking methods, the vector model is generally superior or nearly as good, making it a widely used retrieval model today.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>4. Probabilistic Model</h2>
+    <ul>
+        <li><strong>Overview</strong>:
+            <ul>
+                <li>The Probabilistic Model, introduced in 1976 by Robertson and Sparck Jones, is also known as the Binary Independence Retrieval (BIR) model.</li>
+                <li>It attempts to capture the Information Retrieval (IR) problem within a probabilistic framework.</li>
+            </ul>
+        </li>
+        <li><strong>Core Concept</strong>:
+            <ul>
+                <li>The model focuses on retrieving documents based on their probability of relevance to a user query.</li>
+                <li>An "ideal answer set" contains exactly the relevant documents for a query.</li>
+                <li>The model involves initially guessing the properties of this ideal answer set and refining it through user interaction.</li>
+            </ul>
+        </li>
+        <li><strong>Query Process</strong>:
+            <ul>
+                <li>The initial guess generates a probabilistic description of the ideal answer set to retrieve a first set of documents.</li>
+                <li>The user then reviews the retrieved documents to identify relevant and non-relevant ones.</li>
+                <li>This feedback is used to refine the description of the ideal answer set, improving retrieval accuracy over iterations.</li>
+            </ul>
+        </li>
+        <li><strong>Probabilistic Principle</strong>:
+            <ul>
+                <li>The model estimates the probability that a user will find a document relevant based on the query and document representations.</li>
+                <li>The goal is to maximize the overall probability of relevance for the ideal answer set (labeled R).</li>
+                <li>Documents in set R are predicted to be relevant, while those outside are predicted to be non-relevant.</li>
+            </ul>
+        </li>
+        <li><strong>Ranking</strong>:
+            <ul>
+                <li>Each document is assigned a similarity score based on the ratio of its probability of being relevant to the probability of being non-relevant.</li>
+                <li>Documents are ranked in decreasing order of their probability of relevance.</li>
+            </ul>
+        </li>
+        <li><strong>Advantages</strong>:
+            <ul>
+                <li>Documents are theoretically ranked by their probability of being relevant, which can improve retrieval accuracy.</li>
+            </ul>
+        </li>
+        <li><strong>Disadvantages</strong>:
+            <ul>
+                <li><strong>Initial Guess</strong>: The need to guess the initial separation of documents into relevant and non-relevant sets.</li>
+                <li><strong>Binary Weights</strong>: The model does not consider the frequency of index terms within documents; all weights are binary.</li>
+                <li><strong>Independence Assumption</strong>: Assumes index terms are independent, which may not always be practical. However, this assumption’s impact is unclear.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>5. Fuzzy Set Model</h2>
+    <ul>
+        <li><strong>Core Concept</strong>:
+            <ul>
+                <li>The Fuzzy Set Model is based on fuzzy set theory, which deals with classes that have undefined boundaries.</li>
+                <li>It models the approximate or vague matching between documents and queries by assigning degrees of membership (between 0 and 1) to documents in fuzzy sets defined by query terms.</li>
+            </ul>
+        </li>
+        <li><strong>Fuzzy Set Theory</strong>:
+            <ul>
+                <li><strong>Membership Function</strong>: Represents the degree of membership of elements in a fuzzy set, with values ranging from 0 (no membership) to 1 (full membership).</li>
+                <li><strong>Key Operations</strong>:
+                    <ul>
+                        <li><strong>Complement</strong>: The opposite of a fuzzy set.</li>
+                        <li><strong>Union</strong>: Combination of two or more fuzzy sets.</li>
+                        <li><strong>Intersection</strong>: Common elements of two or more fuzzy sets.</li>
+                    </ul>
+                </li>
+                <li>Fuzzy sets are used to represent vagueness and imprecision in various domains.</li>
+            </ul>
+        </li>
+        <li><strong>Fuzzy Information Retrieval</strong>:
+            <ul>
+                <li><strong>Query Expansion</strong>: The set of index terms in a query is expanded with related terms from a thesaurus, allowing the retrieval of additional relevant documents.</li>
+                <li><strong>Term-Term Correlation</strong>: Uses a correlation matrix to calculate the relationship between a document and its fuzzy index terms.</li>
+                <li><strong>Algebraic Operations</strong>: Adopts algebraic sums and products (rather than max and min) to compute the overall degree of membership of a document in the fuzzy set defined by the query.</li>
+            </ul>
+        </li>
+        <li><strong>Fuzzy Retrieval Features</strong>:
+            <ul>
+                <li><strong>Spelling Variations</strong>: Locates similar spellings of words to account for spelling errors, increasing recall but potentially decreasing precision.</li>
+                <li><strong>Search Expansion</strong>: Includes terms with similar spellings and structures to the query term, giving more weight to those with similar word lengths and character positions.</li>
+                <li><strong>Example</strong>: A fuzzy search for "computer" might include "compiter," "computter," and "compute." It may exclude unrelated valid words (e.g., "commuter") or include them with a lower ranking.</li>
+            </ul>
+        </li>
+        <li><strong>Practical Use</strong>:
+            <ul>
+                <li>Fuzzy retrieval systems may allow users to specify the maximum number of terms included in the expanded query.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>6. Extended Boolean Model</h2>
+    <ul>
+        <li><strong>Core Concept</strong>:
+            <ul>
+                <li>The Extended Boolean Model enhances the classic Boolean model by incorporating partial matching and term weighting, combining features of both Boolean and vector models.</li>
+            </ul>
+        </li>
+        <li><strong>Limitations of Traditional Boolean Retrieval</strong>:
+            <ul>
+                <li>No term weighting, leading to the absence of ranking in the answer set.</li>
+                <li>Results may be either too large or too small.</li>
+                <li>Modern IR systems have largely moved away from the Boolean model due to these limitations.</li>
+            </ul>
+        </li>
+        <li><strong>Adoption of Vector Model</strong>:
+            <ul>
+                <li>Most modern systems use vector retrieval because it is simple, fast, and provides better retrieval performance.</li>
+                <li>The Extended Boolean Model is an alternative approach that integrates Boolean query formulations with the vector model's characteristics.</li>
+            </ul>
+        </li>
+        <li><strong>Term Weighting</strong>:
+            <ul>
+                <li>Involves assigning importance to an index term based on its representation of the associated concept in the document.</li>
+                <li>Weighting helps differentiate the extent to which a concept is described in items within the database.</li>
+                <li>Term weights are typically normalized between 0 and 1, with higher weights indicating stronger representation of the concept.</li>
+            </ul>
+        </li>
+        <li><strong>Challenges with Manual Weighting</strong>:
+            <ul>
+                <li>Manual assignment of weights adds complexity and overhead for the indexer.</li>
+                <li>Requires more complex data structures to store weights.</li>
+            </ul>
+        </li>
+        <li><strong>Query Process</strong>:
+            <ul>
+                <li>Weights assigned to index terms are used to calculate a scalar rank value, predicting the likelihood that an item satisfies the query.</li>
+                <li>Results are presented in descending order of rank value, with weights reflecting the significance users place on each term.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>7. Structured Text Model</h2>
+    <h3>Structured Text Retrieval Model Overview</h3>
+    <ul>
+        <li><strong>Core Idea</strong>:
+            <ul>
+                <li>Structured text retrieval models combine information on text content with document structure, allowing more complex and precise queries.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h3>Types of Structured Text Retrieval Models</h3>
+    <ul>
+        <li><strong>Model Based on Non-Overlapping Lists</strong>:
+            <ul>
+                <li><strong>Proposed by Burkowski</strong>:
+                    <ul>
+                        <li>Documents are divided into non-overlapping text regions (e.g., chapters, sections, subsections) collected into separate lists.</li>
+                        <li>Multiple lists are created for different types of text divisions.</li>
+                        <li>A single inverted file is built for searching both index terms and text regions.</li>
+                        <li>Queries can select regions based on the presence or absence of words or other regions.</li>
+                        <li><strong>Query Examples</strong>:
+                            <ul>
+                                <li>Select a region containing a specific word.</li>
+                                <li>Select a region not containing any other region.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><strong>Model Based on Proximal Nodes</strong>:
+            <ul>
+                <li><strong>Proposed by Navarro and Baeza-Yates</strong>:
+                    <ul>
+                        <li>Allows the creation of independent hierarchical indexing structures (e.g., chapters, sections, paragraphs) over the same document text.</li>
+                        <li>Nodes in these hierarchies represent text regions, and distinct hierarchies may overlap.</li>
+                        <li>Queries refer to nodes from only one hierarchy, enabling faster query processing but reducing expressiveness.</li>
+                        <li>Hierarchical indexing supports nested text regions in the answer set.</li>
+                        <li><strong>Example</strong>: Searching for sections containing the word "holocaust" involves traversing the inverted list and matching structural components in the hierarchy.</li>
+                        <li>The query language supports regular expressions, references to structural components, and their combinations, balancing expressiveness and efficiency.</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>8. Models for Browsing</h2>
+    <h3>General Overview</h3>
+    <ul>
+        <li><strong>Browsing vs. Searching</strong>:
+            <ul>
+                <li><strong>Browsing</strong>: The user explores the document space looking for interesting references without posing a specific query.</li>
+                <li><strong>Searching</strong>: The user has a clearer goal and poses specific queries to find information.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h3>Types of Browsing</h3>
+    <ul>
+        <li><strong>Flat Browsing</strong>:
+            <ul>
+                <li><strong>Flat Organization</strong>: The user explores documents organized in a flat manner (e.g., dots on a 2D plane, or a list).</li>
+                <li><strong>Exploration</strong>: The user searches for correlations among documents or keywords of interest. Keywords found during browsing can be added to the original query for better contextualization (relevance feedback).</li>
+                <li><strong>Example</strong>: Browsing a web page using arrows and scrollbars.</li>
+                <li><strong>Disadvantage</strong>: There may be no indication of the broader context on the current page or screen.</li>
+            </ul>
+        </li>
+        <li><strong>Structure Guided Browsing</strong>:
+            <ul>
+                <li><strong>Hierarchical Organization</strong>: Documents are organized in a structured hierarchy, such as directories grouping related topics.</li>
+                <li><strong>Example</strong>: Browsing an electronic book where chapters, sections, and text form different levels of content.</li>
+                <li><strong>User Interface</strong>: A good UI allows moving up or down these levels, helping the user keep track of context. Additional features like a history map can identify recently visited classes, useful for navigating large structures.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>9. Hypertext Model</h2>
+    <h3>Key Concepts</h3>
+    <ul>
+        <li><strong>Sequential Nature of Written Text</strong>:
+            <ul>
+                <li>Written text is typically designed to be read in a sequence.</li>
+                <li>Skipping portions of the text can lead to miscommunication and loss of the writer's intended message.</li>
+                <li>Sequential reading is essential to fully grasp the writer’s message.</li>
+            </ul>
+        </li>
+        <li><strong>Need for Non-Sequential Access</strong>:
+            <ul>
+                <li>Sometimes, specific information (e.g., regional wars in Europe) is hard to find through sequential reading.</li>
+                <li>A different organizational structure is needed to access such specific information.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h3>Hypertext</h3>
+    <ul>
+        <li><strong>Definition</strong>:
+            <ul>
+                <li>Hypertext is an interactive navigational structure that allows non-sequential browsing of text on a computer screen.</li>
+                <li>It consists of <strong>nodes</strong> (text regions) connected by <strong>directed links</strong> forming a graph structure.</li>
+            </ul>
+        </li>
+        <li><strong>Nodes and Links</strong>:
+            <ul>
+                <li>Each node represents a text region (e.g., chapter, section, Web page).</li>
+                <li>Links between nodes allow movement from one text region to another (e.g., moving from node A to node B).</li>
+                <li>Links are often attached to specific strings in the text, marked for user interaction (e.g., different color, underlined).</li>
+            </ul>
+        </li>
+        <li><strong>User Interaction</strong>:
+            <ul>
+                <li>Clicking on a marked string in the text follows the directed link to a new text region.</li>
+                <li>The process of navigating through hypertext is like traversing a directed graph, visualizing a flow of information designed by the hypertext creator.</li>
+            </ul>
+        </li>
+    </ul>
 </body>
 </html>
