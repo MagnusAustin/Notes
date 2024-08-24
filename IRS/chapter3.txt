@@ -1,0 +1,227 @@
+1. Keywords based querying
+1. **Keyword-Based Queries**:
+   - Queries are the expression of user information needs, commonly using keywords.
+   - These queries are intuitive, simple, and allow for fast ranking.
+   - Queries can be single words or complex combinations of operations involving multiple words.
+   - Basic queries include both single-word and multiple-word queries, as well as patterns.
+
+2. **Single-Word Queries**:
+   - The simplest form of query in a text retrieval system.
+   - Text documents are viewed as sequences of words.
+   - Some models also allow searching within the internal structure of words, enabling pattern searches.
+   - A word is defined by a sequence of letters separated by defined separators.
+   - Complex models may allow certain characters (e.g., hyphens) to be part of a word without splitting it.
+   - The text division into words is crucial for natural language meaning.
+   - Resulting documents are ranked based on the presence of query words and their similarity to the query.
+   - Ranking is commonly supported by statistics like term frequency and inverse document frequency.
+
+3. **Context Queries**:
+   - Complement single-word queries by searching words within specific contexts.
+   - Context queries can involve phrases or proximity queries:
+     - **Phrase Queries**: Search for sequences of words as a phrase.
+     - **Proximity Queries**: Search for words or phrases within a specified distance, with or without maintaining order.
+   - Both phrase and proximity queries can be ranked, often without relying on physical proximity.
+
+4. **Boolean Queries**:
+   - Use Boolean operators (AND, OR, BUT) to combine keyword queries.
+   - A query syntax tree is formed, where basic queries are the leaves, and operators are the internal nodes.
+   - Boolean queries operate on sets of documents, delivering a final set of documents as the answer.
+   - Classic Boolean systems do not rank documents; they either match the query or do not.
+   - Fuzzy Boolean operators relax the conditions for AND and OR, allowing partial matches and ranking documents based on the number of elements they share with the query.
+
+5. **Natural Language Queries**:
+   - Extend the fuzzy Boolean model, blurring the distinction between AND and OR.
+   - Queries become an enumeration of words and contexts without explicit Boolean operations.
+   - Documents matching parts of the query are retrieved, with higher ranks for those matching more parts.
+   - Documents can be penalized or excluded based on the presence of unwanted words.
+   - The query is internally converted into a vector of term weights, and documents are retrieved based on their proximity to this vector.
+   - Allows advanced possibilities, such as using entire documents as queries or implementing relevance feedback techniques.
+
+
+
+
+
+2. Pattern matching
+1. **Introduction to Pattern Matching**:
+   - Pattern-based queries allow retrieval of text segments with specific properties.
+   - Useful for linguistics, text statistics, and data extraction.
+   - These queries can be integrated into basic queries like phrases and proximity queries.
+   - Ranking pattern matching results is challenging.
+
+2. **Pattern Definition**:
+   - A pattern is a set of syntactic features required in a text segment.
+   - Segments matching these features are retrieved.
+   - Patterns range from simple (words) to complex (regular expressions).
+   - More powerful patterns allow more complex queries but also complicate implementation.
+
+3. **Types of Patterns**:
+   - **Words**: Basic pattern, a specific sequence of characters forming a word.
+   - **Prefixes**: A string that forms the beginning of a word (e.g., "comput" matches "computer," "computation").
+   - **Suffixes**: A string that forms the end of a word (e.g., "ters" matches "computers," "testers").
+   - **Substrings**: A string appearing within a word or anywhere in the text (e.g., "tal" matches "coastal," "metallic").
+   - **Ranges**: A pair of strings matching any word within their lexicographical order range (e.g., "held" to "hold" matches "hoax," "hissing").
+   - **Allowing Errors**: Matches words similar to the query word within an allowed error threshold, often using Levenshtein distance (edit distance).
+
+4. **Regular Expressions**:
+   - **Union**: Matches any string that either of the expressions match.
+   - **Concatenation**: Matches occurrences of one expression immediately followed by another.
+   - **Repetition**: Matches zero or more occurrences of an expression (e.g., "pro (blem|tein) (s|e) (0|1|2)*" matches "problem02," "proteins").
+   - Matches can be restricted to whole words, within words, or arbitrary text segments.
+
+5. **Extended Patterns**:
+   - User-friendly query languages simplify the syntax for regular expressions.
+   - These extended patterns are often system-specific and internally converted to regular expressions or searched with specific algorithms.
+
+
+
+
+
+3. Structural Queries
+1. **Introduction to Structural Queries**:
+   - Utilizes text structure in queries, not just content.
+   - Combining structure and content in queries creates more expressive and powerful queries.
+   - Built on top of basic queries, adding constraints like containment, proximity, or structural elements (e.g., chapters, sections).
+   - Boolean queries can incorporate structural queries as components.
+
+2. **Types of Text Structures**:
+   - **Fixed Structure**:
+     - Traditionally restrictive, resembling filled forms with fixed fields (e.g., mail archives).
+     - Fields contain text, often non-nestable or non-overlapping.
+     - Common in commercial systems, but inadequate for hierarchical structures like HTML.
+
+   - **Hypertext**:
+     - Represents a directed graph where nodes contain text, and links connect nodes.
+     - Gained attention with the Web, which is a large hypertext-like database.
+     - Initially, retrieval was navigational, not structure-based.
+     - Tools like WebGlimpse combine browsing and content searching in hypertexts.
+
+   - **Hierarchical Structure**:
+     - Lies between fixed structure and hypertext, representing recursive decomposition (e.g., books, legal documents).
+     - Simplified structure allows faster query algorithms.
+     - Less powerful than hypertext but more efficient.
+
+3. **Hierarchical Models**:
+   - **PAT Expressions**:
+     - Built on the text's index without a special structure index.
+     - Structure marked by tags in the text, allowing dynamic query-time determination.
+     - Efficient implementation with no additional space overhead.
+
+   - **Overlapped Lists**:
+     - Allows region overlap but not nesting.
+     - Solves issues of mixing regions and position sets.
+     - Utilizes an inverted list and indexes regions.
+
+
+
+
+
+4. Query protocols
+1. **Introduction to Query Protocols**:
+   - Query protocols are used by software applications to query text databases automatically.
+   - They are often proposed as standards for querying CD-ROMs or library systems.
+   - Referred to as protocols because they are not designed for direct human use.
+
+2. **Key Query Protocols**:
+
+   - **Z39.50**:
+     - Approved as a standard in 1995 by ANSI and NISO.
+     - Queries bibliographical information using a standard interface between client and host database manager.
+     - Independent of client user interface and host query database language.
+     - Specifies query language, session establishment, communication, and information exchange between client and server.
+     - Originally for bibliographical information (MARC format), but extended for other types of information.
+
+   - **WAIS (Wide Area Information Service)**:
+     - A suite of protocols popular in the early 1990s before the Web boom.
+     - Aimed to be a network publishing protocol and to query databases via the Internet.
+
+3. **CD-ROM Publishing Arena Query Protocols**:
+   - Designed to provide ‘disk interchangeability,’ enabling flexible data communication and cost savings.
+   - **CCL (Common Command Language)**:
+     - NISO proposal based on Z39.50, defines 19 interactive commands.
+     - More popular in Europe, though not widely adopted.
+     - Based on the classical Boolean model.
+
+   - **CD-RDx (Compact Disk Read Only Data exchange)**:
+     - Uses client-server architecture, implemented on most platforms.
+     - The client is generic; the server is provided by the CD-ROM publisher.
+     - Supports fixed-length fields, images, and audio.
+     - Backed by US agencies like CIA, NASA, and GSA.
+
+   - **SFQL (Structured Full-text Query Language)**:
+     - Based on SQL, with a client-server architecture.
+     - Adopted as a standard by the aerospace community.
+     - Documents are treated as rows in a relational table, and can be tagged using SGML.
+     - Supports Boolean/logical operators, thesaurus, proximity operations, and special characters.
+     - More general and flexible compared to CCL or CD-RDx, though based on a relational model, which may not always be ideal for document databases.
+
+
+
+
+
+5. User relevance feedback
+1. **Introduction to Relevance Feedback**:
+   - Relevance feedback is a popular query reformulation strategy.
+   - The user reviews retrieved documents, marking relevant ones to refine the query.
+   - Typically, only the top 10 or 20 documents are examined.
+
+2. **Advantages of Relevance Feedback**:
+   - Shields the user from the query reformulation process; user only provides relevance judgment.
+   - Breaks down the search task into smaller, manageable steps.
+   - Emphasizes relevant terms and de-emphasizes non-relevant ones.
+
+3. **Basic Procedure**:
+   - User submits an initial query.
+   - System returns initial retrieval results.
+   - User marks documents as relevant or non-relevant.
+   - System refines the query based on feedback.
+   - System presents a revised set of results.
+   - The process may iterate multiple times to refine the query further.
+
+4. **Effectiveness of Relevance Feedback**:
+   - Works well if the user’s initial query is somewhat close to the desired documents.
+   - Helps users refine their information needs through iterative search refinement.
+   - Improves precision significantly in the revised result set.
+
+5. **When Relevance Feedback May Not Work**:
+   - **Misspellings**: Spelling errors in the query may hinder effectiveness.
+   - **Cross-language retrieval**: Documents in different languages do not cluster well in term distribution.
+   - **Vocabulary mismatch**: Different terminologies (e.g., "laptop" vs. "notebook computer") can cause query failure.
+   - **Similarity of relevant documents**: Relevant documents must cluster together in terms of term distribution.
+   - **Challenges with Multimodal Classes**:
+     - Subsets of documents using different vocabulary (e.g., "Burma" vs. "Myanmar").
+     - Disjunctive query answers (e.g., "Pop stars who once worked at Burger King").
+     - General concepts appearing as a disjunction of specific concepts (e.g., different types of felines).
+
+
+
+
+
+6. Multimedia IR
+1. **Characteristics of Multimedia Systems**:
+   - Supports a variety of data types, including text, images, graphs, and sound.
+   - More complex than traditional information systems due to heterogeneous data.
+   - Requires advanced data models, query languages, and storage mechanisms to manage complex data structures.
+
+2. **Need for Multimedia IR Systems**:
+   - Traditional IR systems handle only textual, unstructured data.
+   - Multimedia IR systems are required to manage both structured and unstructured multimedia data.
+   - Multimedia IR systems use metadata and may employ a flexible schema to structure data.
+
+3. **Data Modeling in Multimedia IR**:
+   - Multimedia IR systems must represent and store multimedia objects for fast retrieval.
+   - Handles semi-structured data and extracts features from multimedia objects for representation.
+   - Combines traditional and multimedia data types, extending the relational model for complex object representation.
+   - Uses multi-attribute access methods to index and search multimedia objects based on features.
+   - Features can be assigned to multimedia objects manually or automatically, often using a hybrid approach.
+   - Feature extraction is imprecise, so weights are assigned to features to represent uncertainty.
+
+4. **Data Retrieval in Multimedia IR**:
+   - **Query Specification**: Users specify queries with fuzzy, content-based, conventional, and structural predicates.
+   - **Query Processing and Optimization**: Queries are parsed, compiled, and optimized, combining strategies for different data types.
+   - **Query Answer**: Retrieved objects are returned in decreasing order of relevance, measured by a distance function from the query object.
+   - **Query Iteration**: Users refine queries through iterations until satisfied, reducing or increasing the number of returned answers.
+
+5. **Challenges in Multimedia IR**:
+   - Managing the heterogeneity and fuzziness of multimedia data.
+   - Loss of information during indexing.
+   - Need for interactive refinement of query results to handle imprecision in user requests.

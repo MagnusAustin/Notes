@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information Retrieval Concepts</title>
+</head>
+<body>
+    <h1>1. Keywords Based Querying</h1>
+    
+    <h2>1.1 Keyword-Based Queries</h2>
+    <ul>
+        <li>Queries are the expression of user information needs, commonly using keywords.</li>
+        <li>These queries are intuitive, simple, and allow for fast ranking.</li>
+        <li>Queries can be single words or complex combinations of operations involving multiple words.</li>
+        <li>Basic queries include both single-word and multiple-word queries, as well as patterns.</li>
+    </ul>
+
+    <h2>1.2 Single-Word Queries</h2>
+    <ul>
+        <li>The simplest form of query in a text retrieval system.</li>
+        <li>Text documents are viewed as sequences of words.</li>
+        <li>Some models also allow searching within the internal structure of words, enabling pattern searches.</li>
+        <li>A word is defined by a sequence of letters separated by defined separators.</li>
+        <li>Complex models may allow certain characters (e.g., hyphens) to be part of a word without splitting it.</li>
+        <li>The text division into words is crucial for natural language meaning.</li>
+        <li>Resulting documents are ranked based on the presence of query words and their similarity to the query.</li>
+        <li>Ranking is commonly supported by statistics like term frequency and inverse document frequency.</li>
+    </ul>
+
+    <h2>1.3 Context Queries</h2>
+    <ul>
+        <li>Complement single-word queries by searching words within specific contexts.</li>
+        <li>Context queries can involve phrases or proximity queries:
+            <ul>
+                <li><strong>Phrase Queries</strong>: Search for sequences of words as a phrase.</li>
+                <li><strong>Proximity Queries</strong>: Search for words or phrases within a specified distance, with or without maintaining order.</li>
+            </ul>
+        </li>
+        <li>Both phrase and proximity queries can be ranked, often without relying on physical proximity.</li>
+    </ul>
+
+    <h2>1.4 Boolean Queries</h2>
+    <ul>
+        <li>Use Boolean operators (AND, OR, BUT) to combine keyword queries.</li>
+        <li>A query syntax tree is formed, where basic queries are the leaves, and operators are the internal nodes.</li>
+        <li>Boolean queries operate on sets of documents, delivering a final set of documents as the answer.</li>
+        <li>Classic Boolean systems do not rank documents; they either match the query or do not.</li>
+        <li>Fuzzy Boolean operators relax the conditions for AND and OR, allowing partial matches and ranking documents based on the number of elements they share with the query.</li>
+    </ul>
+
+    <h2>1.5 Natural Language Queries</h2>
+    <ul>
+        <li>Extend the fuzzy Boolean model, blurring the distinction between AND and OR.</li>
+        <li>Queries become an enumeration of words and contexts without explicit Boolean operations.</li>
+        <li>Documents matching parts of the query are retrieved, with higher ranks for those matching more parts.</li>
+        <li>Documents can be penalized or excluded based on the presence of unwanted words.</li>
+        <li>The query is internally converted into a vector of term weights, and documents are retrieved based on their proximity to this vector.</li>
+        <li>Allows advanced possibilities, such as using entire documents as queries or implementing relevance feedback techniques.</li>
+    </ul>
+
+    <h1>2. Pattern Matching</h1>
+
+    <h2>2.1 Introduction to Pattern Matching</h2>
+    <ul>
+        <li>Pattern-based queries allow retrieval of text segments with specific properties.</li>
+        <li>Useful for linguistics, text statistics, and data extraction.</li>
+        <li>These queries can be integrated into basic queries like phrases and proximity queries.</li>
+        <li>Ranking pattern matching results is challenging.</li>
+    </ul>
+
+    <h2>2.2 Pattern Definition</h2>
+    <ul>
+        <li>A pattern is a set of syntactic features required in a text segment.</li>
+        <li>Segments matching these features are retrieved.</li>
+        <li>Patterns range from simple (words) to complex (regular expressions).</li>
+        <li>More powerful patterns allow more complex queries but also complicate implementation.</li>
+    </ul>
+
+    <h2>2.3 Types of Patterns</h2>
+    <ul>
+        <li><strong>Words</strong>: Basic pattern, a specific sequence of characters forming a word.</li>
+        <li><strong>Prefixes</strong>: A string that forms the beginning of a word (e.g., "comput" matches "computer," "computation").</li>
+        <li><strong>Suffixes</strong>: A string that forms the end of a word (e.g., "ters" matches "computers," "testers").</li>
+        <li><strong>Substrings</strong>: A string appearing within a word or anywhere in the text (e.g., "tal" matches "coastal," "metallic").</li>
+        <li><strong>Ranges</strong>: A pair of strings matching any word within their lexicographical order range (e.g., "held" to "hold" matches "hoax," "hissing").</li>
+        <li><strong>Allowing Errors</strong>: Matches words similar to the query word within an allowed error threshold, often using Levenshtein distance (edit distance).</li>
+    </ul>
+
+    <h2>2.4 Regular Expressions</h2>
+    <ul>
+        <li><strong>Union</strong>: Matches any string that either of the expressions match.</li>
+        <li><strong>Concatenation</strong>: Matches occurrences of one expression immediately followed by another.</li>
+        <li><strong>Repetition</strong>: Matches zero or more occurrences of an expression (e.g., "pro (blem|tein) (s|e) (0|1|2)*" matches "problem02," "proteins").</li>
+        <li>Matches can be restricted to whole words, within words, or arbitrary text segments.</li>
+    </ul>
+
+    <h2>2.5 Extended Patterns</h2>
+    <ul>
+        <li>User-friendly query languages simplify the syntax for regular expressions.</li>
+        <li>These extended patterns are often system-specific and internally converted to regular expressions or searched with specific algorithms.</li>
+    </ul>
+
+    <h1>3. Structural Queries</h1>
+
+    <h2>3.1 Introduction to Structural Queries</h2>
+    <ul>
+        <li>Utilizes text structure in queries, not just content.</li>
+        <li>Combining structure and content in queries creates more expressive and powerful queries.</li>
+        <li>Built on top of basic queries, adding constraints like containment, proximity, or structural elements (e.g., chapters, sections).</li>
+        <li>Boolean queries can incorporate structural queries as components.</li>
+    </ul>
+
+    <h2>3.2 Types of Text Structures</h2>
+    <ul>
+        <li><strong>Fixed Structure</strong>:
+            <ul>
+                <li>Traditionally restrictive, resembling filled forms with fixed fields (e.g., mail archives).</li>
+                <li>Fields contain text, often non-nestable or non-overlapping.</li>
+                <li>Common in commercial systems, but inadequate for hierarchical structures like HTML.</li>
+            </ul>
+        </li>
+        <li><strong>Hypertext</strong>:
+            <ul>
+                <li>Represents a directed graph where nodes contain text, and links connect nodes.</li>
+                <li>Gained attention with the Web, which is a large hypertext-like database.</li>
+                <li>Initially, retrieval was navigational, not structure-based.</li>
+                <li>Tools like WebGlimpse combine browsing and content searching in hypertexts.</li>
+            </ul>
+        </li>
+        <li><strong>Hierarchical Structure</strong>:
+            <ul>
+                <li>Lies between fixed structure and hypertext, representing recursive decomposition (e.g., books, legal documents).</li>
+                <li>Simplified structure allows faster query algorithms.</li>
+                <li>Less powerful than hypertext but more efficient.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>3.3 Hierarchical Models</h2>
+    <ul>
+        <li><strong>PAT Expressions</strong>:
+            <ul>
+                <li>Built on the text's index without a special structure index.</li>
+                <li>Structure marked by tags in the text, allowing dynamic query-time determination.</li>
+                <li>Efficient implementation with no additional space overhead.</li>
+            </ul>
+        </li>
+        <li><strong>Overlapped Lists</strong>:
+            <ul>
+                <li>Allows region overlap but not nesting.</li>
+                <li>Solves issues of mixing regions and position sets.</li>
+                <li>Utilizes the lowest common ancestor for containment constraints.</li>
+            </ul>
+        </li>
+        <li><strong>Grammatical Models</strong>:
+            <ul>
+                <li>Models text as a context-free grammar defining document structure.</li>
+                <li>Represents each structure element as a context-free language.</li>
+                <li>Text processing is constrained to legal structure expressions, improving system performance.</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>
