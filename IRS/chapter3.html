@@ -161,5 +161,148 @@
             </ul>
         </li>
     </ul>
+    <h1>4. Query Protocols</h1>
+
+    <h2>1. Introduction to Query Protocols</h2>
+    <ul>
+        <li>Query protocols are used by software applications to query text databases automatically.</li>
+        <li>They are often proposed as standards for querying CD-ROMs or library systems.</li>
+        <li>Referred to as protocols because they are not designed for direct human use.</li>
+    </ul>
+
+    <h2>2. Key Query Protocols</h2>
+
+    <h3>Z39.50</h3>
+    <ul>
+        <li>Approved as a standard in 1995 by ANSI and NISO.</li>
+        <li>Queries bibliographical information using a standard interface between client and host database manager.</li>
+        <li>Independent of client user interface and host query database language.</li>
+        <li>Specifies query language, session establishment, communication, and information exchange between client and server.</li>
+        <li>Originally for bibliographical information (MARC format), but extended for other types of information.</li>
+    </ul>
+
+    <h3>WAIS (Wide Area Information Service)</h3>
+    <ul>
+        <li>A suite of protocols popular in the early 1990s before the Web boom.</li>
+        <li>Aimed to be a network publishing protocol and to query databases via the Internet.</li>
+    </ul>
+
+    <h2>3. CD-ROM Publishing Arena Query Protocols</h2>
+    <ul>
+        <li>Designed to provide ‘disk interchangeability,’ enabling flexible data communication and cost savings.</li>
+    </ul>
+
+    <h3>CCL (Common Command Language)</h3>
+    <ul>
+        <li>NISO proposal based on Z39.50, defines 19 interactive commands.</li>
+        <li>More popular in Europe, though not widely adopted.</li>
+        <li>Based on the classical Boolean model.</li>
+    </ul>
+
+    <h3>CD-RDx (Compact Disk Read Only Data exchange)</h3>
+    <ul>
+        <li>Uses client-server architecture, implemented on most platforms.</li>
+        <li>The client is generic; the server is provided by the CD-ROM publisher.</li>
+        <li>Supports fixed-length fields, images, and audio.</li>
+        <li>Backed by US agencies like CIA, NASA, and GSA.</li>
+    </ul>
+
+    <h3>SFQL (Structured Full-text Query Language)</h3>
+    <ul>
+        <li>Based on SQL, with a client-server architecture.</li>
+        <li>Adopted as a standard by the aerospace community.</li>
+        <li>Documents are treated as rows in a relational table, and can be tagged using SGML.</li>
+        <li>Supports Boolean/logical operators, thesaurus, proximity operations, and special characters.</li>
+        <li>More general and flexible compared to CCL or CD-RDx, though based on a relational model, which may not always be ideal for document databases.</li>
+    </ul>
+
+    <h1>5. User Relevance Feedback</h1>
+
+    <h2>1. Introduction to Relevance Feedback</h2>
+    <ul>
+        <li>Relevance feedback is a popular query reformulation strategy.</li>
+        <li>The user reviews retrieved documents, marking relevant ones to refine the query.</li>
+        <li>Typically, only the top 10 or 20 documents are examined.</li>
+    </ul>
+
+    <h2>2. Advantages of Relevance Feedback</h2>
+    <ul>
+        <li>Shields the user from the query reformulation process; user only provides relevance judgment.</li>
+        <li>Breaks down the search task into smaller, manageable steps.</li>
+        <li>Emphasizes relevant terms and de-emphasizes non-relevant ones.</li>
+    </ul>
+
+    <h2>3. Basic Procedure</h2>
+    <ul>
+        <li>User submits an initial query.</li>
+        <li>System returns initial retrieval results.</li>
+        <li>User marks documents as relevant or non-relevant.</li>
+        <li>System refines the query based on feedback.</li>
+        <li>System presents a revised set of results.</li>
+        <li>The process may iterate multiple times to refine the query further.</li>
+    </ul>
+
+    <h2>4. Effectiveness of Relevance Feedback</h2>
+    <ul>
+        <li>Works well if the user’s initial query is somewhat close to the desired documents.</li>
+        <li>Helps users refine their information needs through iterative search refinement.</li>
+        <li>Improves precision significantly in the revised result set.</li>
+    </ul>
+
+    <h2>5. When Relevance Feedback May Not Work</h2>
+    <ul>
+        <li><strong>Misspellings</strong>: Spelling errors in the query may hinder effectiveness.</li>
+        <li><strong>Cross-language retrieval</strong>: Documents in different languages do not cluster well in term distribution.</li>
+        <li><strong>Vocabulary mismatch</strong>: Different terminologies (e.g., "laptop" vs. "notebook computer") can cause query failure.</li>
+        <li><strong>Similarity of relevant documents</strong>: Relevant documents must cluster together in terms of term distribution.</li>
+        <li><strong>Challenges with Multimodal Classes</strong>:
+            <ul>
+                <li>Subsets of documents using different vocabulary (e.g., "Burma" vs. "Myanmar").</li>
+                <li>Disjunctive query answers (e.g., "Pop stars who once worked at Burger King").</li>
+                <li>General concepts appearing as a disjunction of specific concepts (e.g., different types of felines).</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h1>6. Multimedia IR</h1>
+
+    <h2>1. Characteristics of Multimedia Systems</h2>
+    <ul>
+        <li>Supports a variety of data types, including text, images, graphs, and sound.</li>
+        <li>More complex than traditional information systems due to heterogeneous data.</li>
+        <li>Requires advanced data models, query languages, and storage mechanisms to manage complex data structures.</li>
+    </ul>
+
+    <h2>2. Need for Multimedia IR Systems</h2>
+    <ul>
+        <li>Traditional IR systems handle only textual, unstructured data.</li>
+        <li>Multimedia IR systems are required to manage both structured and unstructured multimedia data.</li>
+        <li>Multimedia IR systems use metadata and may employ a flexible schema to structure data.</li>
+    </ul>
+
+    <h2>3. Data Modeling in Multimedia IR</h2>
+    <ul>
+        <li>Multimedia IR systems must represent and store multimedia objects for fast retrieval.</li>
+        <li>Handles semi-structured data and extracts features from multimedia objects for representation.</li>
+        <li>Combines traditional and multimedia data types, extending the relational model for complex object representation.</li>
+        <li>Uses multi-attribute access methods to index and search multimedia objects based on features.</li>
+        <li>Features can be assigned to multimedia objects manually or automatically, often using a hybrid approach.</li>
+        <li>Feature extraction is imprecise, so weights are assigned to features to represent uncertainty.</li>
+    </ul>
+
+    <h2>4. Data Retrieval in Multimedia IR</h2>
+    <ul>
+        <li><strong>Query Specification</strong>: Users specify queries with fuzzy, content-based, conventional, and structural predicates.</li>
+        <li><strong>Query Processing and Optimization</strong>: Queries are parsed, compiled, and optimized, combining strategies for different data types.</li>
+        <li><strong>Query Answer</strong>: Retrieved objects are returned in decreasing order of relevance, measured by a distance function from the query object.</li>
+        <li><strong>Query Iteration</strong>: Users refine queries through iterations until satisfied, reducing or increasing the number of returned answers.</li>
+    </ul>
+
+    <h2>5. Challenges in Multimedia IR</h2>
+    <ul>
+        <li>Managing the heterogeneity and fuzziness of multimedia data.</li>
+        <li>Loss of information during indexing.</li>
+        <li>Need for interactive refinement of query results to handle imprecision in user requests.</li>
+    </ul>
 </body>
 </html>
