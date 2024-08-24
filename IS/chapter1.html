@@ -6,161 +6,504 @@
     <title>Cybersecurity Notes</title>
 </head>
 <body>
-    <header>
-        <h1>Introduction to security</h1>
-    </header>
+    <h1>Define Cyber Attack. State types of cyberattacks.</h1>
+<p>A cyber-attack involves exploiting computer systems and networks using malicious code to alter data and execute cybercrimes like information and identity theft. With the growing reliance on digital technology, cyber-attacks are evolving and can be classified into two main categories:</p>
 
-    <main>
-        <section>
-            <h2>1. Cyber Attack</h2>
-            <p>A deliberate attempt to exploit computer systems, networks, or devices.</p>
-            <h3>Types of Cyberattacks:</h3>
-            <ol>
-                <li><strong>Phishing</strong>: Deceptive attempts to obtain sensitive information via fraudulent emails.</li>
-                <li><strong>Malware</strong>: Software designed to damage, disrupt, or gain unauthorized access to systems.</li>
-                <li><strong>Denial of Service (DoS)</strong>: Overloading systems to disrupt services.</li>
-                <li><strong>Man-in-the-Middle (MitM)</strong>: Intercepting and altering communications between two parties.</li>
-                <li><strong>Ransomware</strong>: Malware that encrypts data and demands payment for decryption.</li>
-            </ol>
-        </section>
+<h2>Web-based attacks:</h2>
+<p>These target websites or web applications. Examples include:</p>
+<ol>
+    <li><strong>SQL Injection:</strong> Injects malicious SQL commands to manipulate databases.</li>
+    <li><strong>DNS Spoofing:</strong> Alters DNS records to redirect traffic to malicious sites.</li>
+    <li><strong>Session Hijacking:</strong> Steals session cookies to access user data.</li>
+    <li><strong>Phishing:</strong> Tricks users into revealing sensitive information.</li>
+    <li><strong>Brute Force:</strong> Uses repeated attempts to guess passwords.</li>
+    <li><strong>Denial of Service (DoS/DDoS):</strong> Overwhelms systems with traffic, making them unavailable.</li>
+    <li><strong>Dictionary Attacks:</strong> Uses common passwords to crack user credentials.</li>
+    <li><strong>URL Interpretation:</strong> Modifies URLs to access unauthorized web pages.</li>
+    <li><strong>File Inclusion:</strong> Accesses or executes unauthorized files on a web server.</li>
+    <li><strong>Man-in-the-Middle:</strong> Intercepts and modifies communications between client and server.</li>
+</ol>
 
-        <section>
-            <h2>2. Vulnerability</h2>
-            <p>A weakness in a system that can be exploited to cause harm.</p>
-            <h3>Classes of Vulnerability:</h3>
-            <ol>
-                <li><strong>Software Vulnerabilities</strong>: Flaws in software code like bugs or unpatched systems.</li>
-                <li><strong>Hardware Vulnerabilities</strong>: Weaknesses in physical components, such as chip-level flaws.</li>
-                <li><strong>Network Vulnerabilities</strong>: Issues in network configurations or protocols.</li>
-                <li><strong>Human Vulnerabilities</strong>: Human errors, such as weak passwords or phishing susceptibility.</li>
-                <li><strong>Process Vulnerabilities</strong>: Inadequate security policies or procedures.</li>
-            </ol>
-        </section>
+<h2>System-based attacks:</h2>
+<p>These target individual computers or networks. Examples include:</p>
+<ol>
+    <li><strong>Viruses:</strong> Malicious software that spreads by replicating itself across files.</li>
+    <li><strong>Worms:</strong> Malware that replicates itself to spread to other computers.</li>
+    <li><strong>Trojan Horses:</strong> Malicious programs disguised as legitimate software.</li>
+    <li><strong>Backdoors:</strong> Hidden methods to bypass normal authentication.</li>
+    <li><strong>Bots:</strong> Automated processes that interact with network services, often used for malicious purposes.</li>
+</ol>
+<hr>
 
-        <section>
-            <h2>3. Authentication Methods</h2>
-            <h3>Types:</h3>
-            <ol>
-                <li><strong>Password-based Authentication</strong>: User credentials are matched against stored passwords.</li>
-                <li><strong>Multi-Factor Authentication (MFA)</strong>: Requires two or more authentication factors.</li>
-                <li><strong>Biometric Authentication</strong>: Uses unique biological traits, such as fingerprints.</li>
-                <li><strong>Token-based Authentication</strong>: Involves a physical or digital token.</li>
-                <li><strong>Certificate-based Authentication</strong>: Uses digital certificates to verify identity.</li>
-            </ol>
-        </section>
+<h1>Define Vulnerability. Explain Different Classes of Vulnerability</h1>
+<p><strong>Vulnerability</strong> is a weakness or flaw in a system, software, or network that can be exploited by attackers to gain unauthorized access, cause damage, or disrupt operations. Vulnerabilities can arise due to various reasons, including design flaws, coding errors, misconfigurations, or inadequate security practices.</p>
 
-        <section>
-            <h2>4. Access Control Policies</h2>
-            <h3>Types:</h3>
-            <ol>
-                <li><strong>Discretionary Access Control (DAC)</strong>: Users have control over access to their resources.</li>
-                <li><strong>Mandatory Access Control (MAC)</strong>: Access is dictated by central authority based on classifications.</li>
-                <li><strong>Role-Based Access Control (RBAC)</strong>: Access is assigned based on roles within an organization.</li>
-                <li><strong>Attribute-Based Access Control (ABAC)</strong>: Access is determined by policies using attributes.</li>
-                <li><strong>Rule-Based Access Control</strong>: Access based on a set of rules defined by the system administrator.</li>
-            </ol>
-        </section>
+<h2>Different Classes of Vulnerability:</h2>
 
-        <section>
-            <h2>5. Authentication Using Tokens</h2>
-            <p>Tokens are generated and exchanged during the authentication process.</p>
-            <ol>
-                <li><strong>Process</strong>: User credentials are validated, and a token is issued.</li>
-                <li><strong>Token Use</strong>: The token is used for subsequent requests without re-entering credentials.</li>
-                <li><strong>Session Management</strong>: Tokens can be time-bound and revoked when a session ends.</li>
-                <li><strong>Types of Tokens</strong>: JSON Web Tokens (JWT), OAuth tokens, etc.</li>
-                <li><strong>Security</strong>: Tokens are encrypted to ensure secure transmission.</li>
-            </ol>
-        </section>
+<h3>1. System Vulnerabilities:</h3>
+<ul>
+    <li><strong>Operating System Flaws:</strong> Weaknesses in an OS that can be exploited to gain unauthorized access or disrupt system operations.</li>
+    <li><strong>Network Configuration Issues:</strong> Incorrect network settings that can expose the system to attacks, such as open ports or unpatched protocols.</li>
+    <li><strong>Hardware Vulnerabilities:</strong> Physical or firmware flaws in hardware components, such as CPUs or routers, that can be exploited.</li>
+</ul>
 
-        <section>
-            <h2>6. RBAC vs. ABAC</h2>
-            <h3>Role-Based Access Control (RBAC):</h3>
-            <ol>
-                <li>Access is granted based on roles.</li>
-                <li>Easier to manage in static environments.</li>
-                <li>Simplifies access control by grouping users.</li>
-                <li>Less flexible in dynamic environments.</li>
-                <li>Best for organizations with clearly defined roles.</li>
-            </ol>
-            <h3>Attribute-Based Access Control (ABAC):</h3>
-            <ol>
-                <li>Access decisions based on attributes like user, environment, and resource.</li>
-                <li>More granular and flexible.</li>
-                <li>Suitable for dynamic and complex environments.</li>
-                <li>Policy-based and scalable.</li>
-                <li>Requires careful planning and management of attributes.</li>
-            </ol>
-        </section>
+<h3>2. Software Vulnerabilities:</h3>
+<ul>
+    <li><strong>Buffer Overflow:</strong> Occurs when more data is written to a buffer than it can hold, leading to data corruption or code execution.</li>
+    <li><strong>Injection Flaws:</strong> Vulnerabilities that allow attackers to inject malicious code into a program, such as SQL injection or command injection.</li>
+    <li><strong>Cross-Site Scripting (XSS):</strong> A vulnerability in web applications that allows attackers to inject malicious scripts into webpages viewed by other users.</li>
+</ul>
 
-        <section>
-            <h2>7. Access Control in BIBA Model</h2>
-            <p>The BIBA model is focused on data integrity.</p>
-            <ol>
-                <li><strong>No Write Up</strong>: Users cannot write data to a higher integrity level.</li>
-                <li><strong>No Read Down</strong>: Users cannot read data from a lower integrity level.</li>
-                <li><strong>Strict Integrity</strong>: Prevents unauthorized data modifications.</li>
-                <li><strong>Invocation Property</strong>: Ensures that subjects cannot invoke objects at a higher integrity level.</li>
-                <li><strong>Access Control</strong>: Achieved through rules that maintain data integrity and prevent corruption.</li>
-            </ol>
-        </section>
+<h3>3. Network Vulnerabilities:</h3>
+<ul>
+    <li><strong>Weak Encryption:</strong> The use of outdated or insufficient encryption methods that can be easily broken by attackers.</li>
+    <li><strong>Man-in-the-Middle (MitM) Attacks:</strong> Exploiting the lack of secure communication channels to intercept or alter data between two parties.</li>
+    <li><strong>Denial of Service (DoS) Attacks:</strong> Exploiting network vulnerabilities to flood the target with traffic, rendering it unavailable to legitimate users.</li>
+</ul>
 
-        <section>
-            <h2>8. CIA Triad Model of Network Security</h2>
-            <h3>Components:</h3>
-            <ol>
-                <li><strong>Confidentiality</strong>: Ensures that information is only accessible to those authorized.</li>
-                <li><strong>Integrity</strong>: Ensures data accuracy and consistency, preventing unauthorized modifications.</li>
-                <li><strong>Availability</strong>: Ensures that data and resources are available to authorized users when needed.</li>
-                <li><strong>Protection Measures</strong>: Encryption for confidentiality, checksums for integrity, redundancy for availability.</li>
-                <li><strong>Balanced Security</strong>: Effective security solutions consider all three components.</li>
-            </ol>
-        </section>
+<h3>4. Human Vulnerabilities:</h3>
+<ul>
+    <li><strong>Social Engineering:</strong> Exploiting human psychology to trick individuals into revealing sensitive information or performing actions that compromise security.</li>
+    <li><strong>Poor Security Practices:</strong> Employees using weak passwords, sharing credentials, or failing to follow security protocols can create vulnerabilities.</li>
+    <li><strong>Insider Threats:</strong> Authorized individuals who intentionally or unintentionally cause harm to the organization by exploiting their access.</li>
+</ul>
 
-        <section>
-            <h2>9. Bell LaPadula (BLP) Model</h2>
-            <h3>Access Modes:</h3>
-            <ol>
-                <li><strong>Read (Simple Security Property)</strong>: No read up – users cannot read data at a higher security level.</li>
-                <li><strong>Write (Star Property)</strong>: No write down – users cannot write data to a lower security level.</li>
-                <li><strong>Access Modes</strong>: Read, Write, Append.</li>
-                <li><strong>Security Levels</strong>: Confidentiality-focused with clearances and classification levels.</li>
-                <li><strong>Properties</strong>: Enforces strict confidentiality controls to prevent data leakage.</li>
-            </ol>
-        </section>
+<h3>5. Configuration Vulnerabilities:</h3>
+<ul>
+    <li><strong>Default Settings:</strong> Failure to change default passwords or settings in software or hardware can leave systems vulnerable.</li>
+    <li><strong>Improper Access Controls:</strong> Weak or incorrectly configured access controls can allow unauthorized access to sensitive data.</li>
+    <li><strong>Unpatched Systems:</strong> Systems that are not regularly updated with security patches are vulnerable to known exploits.</li>
+</ul>
 
-        <section>
-            <h2>10. Attribute-Based Access Control (ABAC)</h2>
-            <p>Access is granted based on multiple attributes.</p>
-            <ol>
-                <li><strong>Attributes</strong>: Include user characteristics, resource characteristics, environment conditions.</li>
-                <li><strong>Policy-based</strong>: Access decisions are made based on policies combining these attributes.</li>
-                <li><strong>Flexibility</strong>: Allows for complex access controls in dynamic environments.</li>
-                <li><strong>Scalability</strong>: Scales well with large, diverse organizations.</li>
-                <li><strong>Granularity</strong>: Provides fine-grained control over access.</li>
-            </ol>
-        </section>
+<h3>6. Physical Vulnerabilities:</h3>
+<ul>
+    <li><strong>Unsecured Hardware:</strong> Lack of physical security measures, such as locks or surveillance, can lead to unauthorized access or theft of hardware.</li>
+    <li><strong>Environmental Factors:</strong> Vulnerabilities related to environmental conditions, such as exposure to extreme temperatures or humidity, which can damage hardware and lead to data loss.</li>
+    <li><strong>Insufficient Disaster Recovery:</strong> Inadequate planning for natural disasters or physical damage can leave systems vulnerable to prolonged outages or data loss.</li>
+</ul>
 
-        <section>
-            <h2>11. Defense Strategies and Techniques</h2>
-            <h3>Strategies:</h3>
-            <ol>
-                <li><strong>Defense in Depth</strong>: Layered security measures to protect against attacks.</li>
-                <li><strong>Zero Trust</strong>: No implicit trust; every access request must be verified.</li>
-                <li><strong>Least Privilege</strong>: Users are given the minimum access necessary.</li>
-                <li><strong>Segmentation</strong>: Dividing networks to contain breaches.</li>
-                <li><strong>Redundancy</strong>: Backup systems and processes to ensure availability.</li>
-            </ol>
-            <h3>Techniques:</h3>
-            <ol>
-                <li><strong>Encryption</strong>: Protects data in transit and at rest.</li>
-                <li><strong>Firewalls</strong>: Monitor and control incoming and outgoing network traffic.</li>
-                <li><strong>Intrusion Detection Systems (IDS)</strong>: Detect and respond to potential threats.</li>
-                <li><strong>Patching</strong>: Regularly updating software to fix vulnerabilities.</li>
-                <li><strong>User Education</strong>: Training users on security best practices.</li>
-            </ol>
-        </section>
-    </main>
+<hr>
+
+<h1>Explain Different Types of Authentication Methods</h1>
+<p><strong>Authentication</strong> is the process of verifying if a user or entity is who they claim to be. It typically involves two phases: identification and actual authentication. Identification involves providing a user ID, while authentication verifies the provided identity using credentials.</p>
+
+<h2>Types of Authentication:</h2>
+
+<ul>
+    <li><strong>Something You Know</strong> (e.g., password): The most common form, but prone to forgetting and can be insecure if written down.</li>
+    <li><strong>Something You Have</strong> (e.g., smart card): Requires a physical object for authentication, which can be stolen.</li>
+    <li><strong>Something You Are</strong> (e.g., fingerprint): Uses biometric data, which is difficult to lose but expensive and less accurate.</li>
+</ul>
+
+<h2>User Authentication Mechanisms:</h2>
+
+<h3>1. Password Authentication:</h3>
+<ul>
+    <li>Involves prompting for a user ID and password.</li>
+    <li>Problems include vulnerability to replay attacks, which can be mitigated by adding randomness (e.g., challenges).</li>
+    <li>Passwords should be stored using message digests rather than in plain text.</li>
+</ul>
+
+<h3>2. Authentication Tokens:</h3>
+<ul>
+    <li>Tokens are devices that generate one-time passwords (OTPs) based on a seed value.</li>
+    <li>Two types:
+        <ul>
+            <li><strong>Challenge/Response Tokens:</strong> Involves generating and signing a random challenge.</li>
+            <li><strong>Time-based Tokens:</strong> Generate OTPs based on the current time and seed value.</li>
+        </ul>
+    </li>
+</ul>
+
+<h3>3. Certificate-Based Authentication:</h3>
+<ul>
+    <li>Uses digital certificates (e.g., X.509) issued by a Certification Authority (CA) to authenticate users.</li>
+    <li>Certificates are like electronic passports and are verified against stored copies.</li>
+    <li>Problems include potential misuse if a certificate is stolen or copied.</li>
+</ul>
+
+<h3>4. Biometric Authentication:</h3>
+<ul>
+    <li>Uses physical characteristics (e.g., fingerprints, retina scans) to authenticate.</li>
+    <li>Biometric systems are prone to issues like false acceptance/rejection, cost, user discomfort, and potential database compromise.</li>
+    <li>Configurable parameters include False Accept Ratio (FAR) and False Reject Ratio (FRR).</li>
+</ul>
+
+<hr>
+<h1>Access Control Policies</h1>
+<p>Organizations determine appropriate access control models based on data sensitivity. The main types of access control are:</p>
+
+<h2>1. Discretionary Access Control (DAC):</h2>
+<ul>
+    <li>Data owners decide access based on requestor identity and access rules.</li>
+    <li>Example: Unix file mode.</li>
+    <li>Attributes include transfer of ownership, access type determination, and ACL-based access.</li>
+    <li>Disadvantages: Vulnerabilities, maintenance challenges, and limited negative authorization power.</li>
+</ul>
+
+<h2>2. Mandatory Access Control (MAC):</h2>
+<ul>
+    <li>Access is based on a central authority's regulations, using security labels and clearances.</li>
+    <li>Focuses on confidentiality, used in high-security environments like military institutions.</li>
+    <li>Disadvantages: Expensive and difficult to implement.</li>
+</ul>
+
+<h2>3. Role-Based Access Control (RBAC):</h2>
+<ul>
+    <li>Access is based on user roles, following principles like "least privilege."</li>
+    <li>Core principles: Role assignment, role authorization, and permission authorization.</li>
+    <li>Benefits: Reduces administrative work, maximizes efficiency, and improves compliance.</li>
+</ul>
+
+<h2>4. Attribute-Based Access Control (ABAC):</h2>
+<ul>
+    <li>Access is granted based on policies that combine user, resource, and environment attributes.</li>
+    <li>Involves a framework with components like Policy Administration Point (PAP), Policy Enforcement Point (PEP), Policy Decision Point (PDP), and Policy Information Point (PIP).</li>
+    <li>Policies can grant or deny access based on various conditions.</li>
+</ul>
+
+<hr>
+<h1>Authentication Using Tokens</h1>
+<p><strong>Authentication Tokens Overview:</strong></p>
+<ul>
+    <li>Tokens are more secure than passwords and include features like a processor, LCD, battery, keypad, and real-time clock.</li>
+</ul>
+
+<p><strong>Token Creation and Use:</strong></p>
+<ul>
+    <li>Tokens are created with a seed by the authentication server, stored in both the token and user database.</li>
+    <li>Tokens generate one-time passwords (OTP) for authentication, with the server validating these OTPs.</li>
+</ul>
+
+<h2>Types of Authentication Tokens:</h2>
+
+<h3>1. Challenge/Response Tokens:</h3>
+<ul>
+    <li><strong>Process:</strong></li>
+    <li>User sends a login request.</li>
+    <li>Server creates a random challenge.</li>
+    <li>User signs the challenge using the token, which encrypts it with a seed.</li>
+    <li>User sends the encrypted challenge as a password.</li>
+    <li>Server verifies the encrypted challenge by comparing it with the expected result based on the seed.</li>
+    <li>Ensures secure authentication by verifying the user’s identity through the encrypted challenge.</li>
+</ul>
+
+<h3>2. Time-Based Tokens:</h3>
+<ul>
+    <li><strong>Process:</strong></li>
+    <li>Token generates a password using the seed and the current system time, which changes every 60 seconds.</li>
+    <li>User uses the generated password for login.</li>
+    <li>Server generates a password using the same seed and time, then verifies the match.</li>
+    <li>Provides time-sensitive, secure access by synchronizing the token and server's time-based password generation.</li>
+</ul>
+
+<hr>
+
+<h1>Comparison of RBAC and ABAC</h1>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Aspect</th>
+            <th>Role-Based Access Control (RBAC)</th>
+            <th>Attribute-Based Access Control (ABAC)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Core Principle</td>
+            <td>Access is granted based on predefined roles assigned to users.</td>
+            <td>Access is granted based on attributes associated with users, resources, and environment.</td>
+        </tr>
+        <tr>
+            <td>Access Control Basis</td>
+            <td>User's role within an organization.</td>
+            <td>Combination of multiple attributes (e.g., user role, resource type, time).</td>
+        </tr>
+        <tr>
+            <td>Flexibility</td>
+            <td>Less flexible, as access control is tied to fixed roles.</td>
+            <td>Highly flexible, as access can be fine-tuned using various attributes.</td>
+        </tr>
+        <tr>
+            <td>Scalability</td>
+            <td>Suitable for organizations with defined roles and responsibilities.</td>
+            <td>More scalable for complex environments with dynamic access requirements.</td>
+        </tr>
+        <tr>
+            <td>Policy Definition</td>
+            <td>Roles are predefined, and permissions are assigned to these roles.</td>
+            <td>Policies are defined using combinations of attributes, often using Boolean logic.</td>
+        </tr>
+        <tr>
+            <td>Policy Management</td>
+            <td>Simpler to manage but can become complex with a large number of roles.</td>
+            <td>More complex to manage due to the need to define and maintain attribute-based policies.</td>
+        </tr>
+        <tr>
+            <td>Granularity</td>
+            <td>Coarse-grained access control, as permissions are role-based.</td>
+            <td>Fine-grained access control, allowing for specific conditions and contexts.</td>
+        </tr>
+        <tr>
+            <td>Use Cases</td>
+            <td>Common in organizations with stable, hierarchical structures.</td>
+            <td>Suitable for dynamic and complex environments where access needs vary frequently.</td>
+        </tr>
+        <tr>
+            <td>Implementation Complexity</td>
+            <td>Easier to implement and manage.</td>
+            <td>More complex to implement due to the need for attribute evaluation and policy enforcement.</td>
+        </tr>
+        <tr>
+            <td>Example</td>
+            <td>A software engineer role has access to specific development tools.</td>
+            <td>A user can access sensitive data only if they are a manager and working within office hours.</td>
+        </tr>
+        <tr>
+            <td>Maintenance</td>
+            <td>Requires updates when roles change.</td>
+            <td>Requires updates as attributes, policies, or environments change.</td>
+        </tr>
+        <tr>
+            <td>Adaptability</td>
+            <td>Less adaptable to changing environments.</td>
+            <td>Highly adaptable to changing conditions and contexts.</td>
+        </tr>
+        <tr>
+            <td>Compliance</td>
+            <td>Good for meeting compliance with clear role-based requirements.</td>
+            <td>Provides better compliance for environments needing detailed access control.</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<hr>
+<h1>Access Control in the Biba Model</h1>
+<p>The Biba Model, created by Kenneth J. Biba, focuses on maintaining the integrity of security systems. It organizes users (subjects) and files (objects) into different layers of secrecy, functioning as the opposite of the Bell-LaPadula Model. The Biba Model enforces integrity through the following three rules:</p>
+
+<ol>
+    <li><strong>Simple Integrity Rule (No Read Down)</strong>: A subject can only read files at the same or higher levels of secrecy, but not at lower levels. This rule prevents the subject from reading data from a lower integrity level to maintain the integrity of the information.</li>
+    <li><strong>Star Integrity Rule (No Write Up)</strong>: A subject can only write to files at the same or lower levels of secrecy, but not to higher levels. This prevents the contamination of data at a higher integrity level by ensuring that subjects cannot write up.</li>
+    <li><strong>Strong Star Integrity Rule (No Read Write Up Down)</strong>: The most secure rule, it dictates that a subject can only read and write files at the same level of secrecy. This prevents both reading down and writing up, ensuring the highest level of integrity by restricting actions to the subject's own level.</li>
+</ol>
+
+<p>These rules ensure that data integrity is preserved by controlling how and where users can read or write data within a system.</p>
+
+<hr>
+<h1>CIA Triad Model of Network Security</h1>
+<p>The CIA triad is a fundamental model in network security, guiding policies for information security within organizations. It consists of three key objectives:</p>
+
+<dl>
+    <dt><strong>Confidentiality</strong></dt>
+    <dd>
+        <p>Ensures that only authorized individuals or systems can access sensitive information. Techniques like encryption (e.g., AES, DES) and VPNs are used to protect data from unauthorized access. Additionally, access controls and authentication methods, such as multi-factor authentication, are implemented to ensure that only legitimate users can access sensitive data.</p>
+    </dd>
+
+    <dt><strong>Integrity</strong></dt>
+    <dd>
+        <p>Ensures that data remains unaltered during transmission. Hash functions like SHA and MD5 are used to verify that data has not been modified, maintaining its integrity. Furthermore, digital signatures can be employed to provide both data integrity and authenticity, ensuring that the data originates from a verified source.</p>
+    </dd>
+
+    <dt><strong>Availability</strong></dt>
+    <dd>
+        <p>Ensures that the network and data are accessible to authorized users when needed. This involves maintaining hardware, upgrading systems, and protecting against attacks like DoS or DDoS, which can disrupt network availability. Additionally, redundancy measures, such as backup servers and failover systems, are implemented to ensure continuous access to data and services even during unexpected failures or attacks.</p>
+    </dd>
+</dl>
+<hr>
+
+<h1>Bell-LaPadula (BLP) Model Access Modes and Properties</h1>
+<p>The Bell-LaPadula Model is designed to ensure data confidentiality and organizes users (subjects) and files (objects) into hierarchical layers of secrecy. The model enforces confidentiality through the following rules:</p>
+
+<dl>
+    <dt><strong>Simple Confidentiality Rule (No Read Up)</strong></dt>
+    <dd>
+        <p>A subject can only read files at the same level of secrecy or at lower levels, but not at higher levels. This prevents a subject from accessing more sensitive data than their clearance level.</p>
+    </dd>
+
+    <dt><strong>Star Confidentiality Rule (No Write Down)</strong></dt>
+    <dd>
+        <p>A subject can only write to files at the same level of secrecy or to higher levels, but not to lower levels. This prevents a subject from writing less secure information that could potentially compromise higher-level data.</p>
+    </dd>
+
+    <dt><strong>Strong Star Confidentiality Rule (No Read Write Up Down)</strong></dt>
+    <dd>
+        <p>The strictest rule, it states that a subject can only read and write files at the same level of secrecy. This ensures that subjects cannot access or modify data at higher or lower secrecy levels.</p>
+    </dd>
+</dl>
+
+<hr>
+
+<h1>Attribute-Based Access Control (ABAC)</h1>
+<p><strong>Attribute-Based Access Control (ABAC)</strong> is a flexible and dynamic access control model that grants access rights based on a combination of attributes. Below is an overview:</p>
+
+<h2>Key Features:</h2>
+<ul>
+    <li><strong>Policy-Based:</strong> Access rights are determined by policies that use attributes.</li>
+    <li><strong>Boolean Logic:</strong> Rules use "IF, THEN" statements to define access conditions.</li>
+    <li><strong>Dynamic Attributes:</strong> Policies can use various attributes such as user, resource, action, and contextual attributes.</li>
+</ul>
+
+<h2>ABAC Architecture:</h2>
+<ul>
+    <li><strong>Policy Administration Point (PAP):</strong> Manages and creates policies.</li>
+    <li><strong>Policy Enforcement Point (PEP):</strong> Protects resources and sends authorization requests to the PDP.</li>
+    <li><strong>Policy Decision Point (PDP):</strong> Evaluates requests against policies and decides whether to permit or deny access.</li>
+    <li><strong>Policy Information Point (PIP):</strong> Provides external attribute data to the PDP.</li>
+</ul>
+
+<h2>Attribute Categories:</h2>
+<ul>
+    <li><strong>Subject Attributes:</strong> Characteristics of the user (e.g., age, role, department).</li>
+    <li><strong>Action Attributes:</strong> Details of the action being performed (e.g., read, write).</li>
+    <li><strong>Object Attributes:</strong> Properties of the resource (e.g., type, sensitivity).</li>
+    <li><strong>Contextual Attributes:</strong> Environmental factors (e.g., time, location).</li>
+</ul>
+
+<h2>Examples of Policies:</h2>
+<ul>
+    <li>Access to a document if it’s in the same department as the user.</li>
+    <li>Edit a document if the user is the owner and the document is in draft mode.</li>
+    <li>Deny access before 9 AM.</li>
+</ul>
+
+<hr>
+<h1>Introduction to AAA</h1>
+
+<p><strong>AAA</strong> stands for Authentication, Authorization, and Accounting. These concepts are crucial for ensuring security in computer and network systems, supporting the Confidentiality, Integrity, and Availability (CIA) triad.</p>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Concept</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Authentication</strong></td>
+            <td>The process of verifying if a user or entity is who they claim to be.</td>
+        </tr>
+        <tr>
+            <td><strong>Authorization</strong></td>
+            <td>Determines what an authenticated user is allowed to do.</td>
+        </tr>
+        <tr>
+            <td><strong>Accounting</strong></td>
+            <td>Tracks and logs user activities on the system.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Authentication Overview</h2>
+
+<p><strong>Authentication</strong> verifies a user's identity through various methods:</p>
+<ul>
+    <li><strong>Something You Know:</strong> Passwords.</li>
+    <li><strong>Something You Have:</strong> Smart cards.</li>
+    <li><strong>Something You Are:</strong> Biometric features (e.g., fingerprints).</li>
+</ul>
+
+<h3>Authentication Process:</h3>
+<ol>
+    <li><strong>Identification:</strong> User provides a User ID.</li>
+    <li><strong>Authentication:</strong> User provides evidence (credential) to verify identity.</li>
+</ol>
+
+<h2>Authentication Mechanisms</h2>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Mechanism</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Passwords</strong></td>
+            <td>Most common form. Validation is often done using message digests to protect against attacks like replay attacks.</td>
+        </tr>
+        <tr>
+            <td><strong>Authentication Tokens</strong></td>
+            <td>Devices generating one-time passwords (OTPs). Examples include Challenge/Response tokens and Time-based tokens.</td>
+        </tr>
+        <tr>
+            <td><strong>Certificates-Based Authentication</strong></td>
+            <td>Uses digital certificates issued by a Certification Authority (CA) to verify identity.</td>
+        </tr>
+        <tr>
+            <td><strong>Biometric Authentication</strong></td>
+            <td>Uses physical characteristics (e.g., fingerprints) for verification.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Details of Authentication Mechanisms</h2>
+
+<h3>1. Password Authentication</h3>
+<ul>
+    <li><strong>Process:</strong>
+        <ul>
+            <li>Prompt for User ID and Password.</li>
+            <li>Validate the credentials.</li>
+        </ul>
+    </li>
+    <li><strong>Problems:</strong>
+        <ul>
+            <li>Passwords can be forgotten or stolen.</li>
+            <li>Use of message digests to secure stored passwords.</li>
+            <li>Replay attacks can be mitigated by adding randomness.</li>
+        </ul>
+    </li>
+</ul>
+
+<h3>2. Authentication Tokens</h3>
+<ul>
+    <li><strong>Features:</strong> Processor, LCD, Battery, Keypad, Real-time Clock.</li>
+    <li><strong>Types:</strong>
+        <ul>
+            <li><strong>Challenge/Response Tokens:</strong> Server sends a challenge; user signs it with a token.</li>
+            <li><strong>Time-Based Tokens:</strong> Password changes every 60 seconds based on system time.</li>
+        </ul>
+    </li>
+</ul>
+
+<h3>3. Certificates-Based Authentication</h3>
+<ul>
+    <li><strong>Digital Certificates:</strong> Electronic "passport" for secure exchanges. Issued by Certification Authorities (CAs).</li>
+    <li><strong>Creation Steps:</strong>
+        <ul>
+            <li>Key Generation</li>
+            <li>Registration</li>
+            <li>Verification (Proof of Possession)</li>
+            <li>Certificate Issuance</li>
+        </ul>
+    </li>
+    <li><strong>Process:</strong>
+        <ul>
+            <li>User sends a login request with a certificate.</li>
+            <li>Server verifies using the public key in the certificate.</li>
+        </ul>
+    </li>
+</ul>
+
+<h3>4. Biometric Authentication</h3>
+<ul>
+    <li><strong>Forms:</strong> Fingerprints, Retina scans, Iris scans, Voice prints, etc.</li>
+    <li><strong>Working:</strong>
+        <ul>
+            <li>User's biometric data is compared against stored data.</li>
+            <li>Uses False Accept Ratio (FAR) and False Reject Ratio (FRR) to measure effectiveness.</li>
+        </ul>
+    </li>
+    <li><strong>Challenges:</strong>
+        <ul>
+            <li>Reliability, cost, user comfort, and security of biometric data.</li>
+        </ul>
+    </li>
+</ul>
+
 
 </body>
 </html>
