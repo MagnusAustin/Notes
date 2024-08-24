@@ -1,0 +1,146 @@
+1. Phases of NLP
+1. **Lexical Analysis**:
+   - Identifies and analyzes the structure of words.
+   - Lexicon refers to the collection of words and phrases in a language.
+   - Divides text into paragraphs, sentences, and words.
+
+2. **Syntactic Analysis (Parsing)**:
+   - Analyzes words in a sentence for grammar.
+   - Arranges words to show their relationships.
+   - Rejects sentences that do not conform to grammatical rules (e.g., "The school goes to boy").
+
+3. **Semantic Analysis**:
+   - Extracts the exact or dictionary meaning from the text.
+   - Checks the text for meaningfulness.
+   - Maps syntactic structures to objects in the task domain (e.g., disregards sentences like "hot ice-cream").
+
+4. **Discourse Integration**:
+   - Considers the meaning of the current sentence in the context of the preceding sentence.
+   - Helps derive the meaning of the succeeding sentence.
+
+5. **Pragmatic Analysis**:
+   - Reinterprets what was said based on what it actually meant.
+   - Involves understanding language aspects that require real-world knowledge.
+
+
+
+
+
+2. Design principles of cognitive systems
+1. **Standardize**:
+   - Ensure consistency in how devices work to prevent errors.
+   - Similar devices should operate in the same way.
+
+2. **Use Stereotypes**:
+   - Leverage commonly held expectations in design.
+   - Stereotypes are conventions generally followed, similar to standardization.
+
+3. **Match Controls to Equipment Layout**:
+   - Align controls with the physical layout of equipment for intuitive use.
+
+4. **Simplify Presentation of Information**:
+   - Provide simplified displays to avoid overwhelming users.
+   - Complexity should be reduced depending on the situation.
+
+5. **Present Information in Appropriate Detail**:
+   - Information should be organized and easy to understand.
+   - Good design leads to user-friendly systems.
+
+6. **Present Clear Images**:
+   - Ensure images are visible, distinguishable, and interpretable.
+     - **Visibility**: Messages must be visible and unobstructed.
+     - **Distinguishability**: Messages should be distinct from surrounding signals.
+     - **Interpretability**: Messages should be easy to interpret and match user training.
+
+7. **Use Redundancies**:
+   - Provide the same information in more than one way to prevent mistakes.
+
+8. **Use Patterns**:
+   - Present information as patterns for quicker and more accurate understanding.
+   - Grouping controls in patterns can aid user comprehension.
+
+9. **Provide Variable Stimuli**:
+   - Vary stimuli to avoid sensory fatigue and ensure information is noticed.
+   - Avoid excessive use of a single method for presenting information.
+
+10. **Provide Instantaneous Feedback**:
+    - Offer immediate feedback to users to help them identify errors quickly.
+
+
+
+
+
+3. Natural Language Processing in Support of a Cognitive System
+1. **Core Ability of Cognitive Systems**:
+   - NLP is a fundamental capability in cognitive computing systems.
+   - It helps computers process and understand human language.
+
+2. **Technical Processes Behind NLP**:
+   - Involves machine learning techniques, computational linguistics, and statistical analysis across training corpora.
+
+3. **Advancements in AI and NLP**:
+   - The rise of AI technologies has driven interest in interacting with computers using spoken human language.
+   - There is increasing demand for NLP applications.
+
+4. **Automation and Efficiency**:
+   - NLP is widely used for automating information-intensive tasks.
+   - It offers benefits like operational and production efficiencies, and more effective data analysis.
+
+5. **Ultimate Goal of NLP**:
+   - To enable computers to achieve human-like comprehension of text and language.
+   - This would allow computers to understand, infer, summarize, translate, and generate accurate and natural human text and language.
+
+
+
+
+
+4. State the applications of Cognitive Computing?
+1. **Healthcare**:
+   - Diagnosis and treatment recommendations.
+   - Personalized medicine based on patient data.
+   - Drug discovery and development.
+
+2. **Customer Service**:
+   - Chatbots and virtual assistants for customer support.
+   - Automated responses and issue resolution.
+   - Enhancing customer experience through personalized interactions.
+
+3. **Finance**:
+   - Fraud detection and prevention.
+   - Risk assessment and management.
+   - Personalized financial advice and portfolio management.
+
+4. **Retail**:
+   - Personalized shopping experiences and recommendations.
+   - Inventory management and supply chain optimization.
+   - Customer sentiment analysis and behavior prediction.
+
+5. **Legal**:
+   - Contract analysis and review.
+   - Legal research and case law analysis.
+   - Automating routine legal tasks and documentation.
+
+6. **Education**:
+   - Personalized learning experiences and adaptive learning systems.
+   - Automating grading and assessment.
+   - Intelligent tutoring systems and educational content recommendations.
+
+7. **Manufacturing**:
+   - Predictive maintenance and equipment monitoring.
+   - Optimizing production processes and quality control.
+   - Supply chain and logistics management.
+
+8. **Transportation**:
+   - Autonomous vehicles and driver assistance systems.
+   - Traffic management and route optimization.
+   - Predictive maintenance for transportation infrastructure.
+
+9. **Risk Management**:
+   - Identifying and mitigating potential risks in various domains.
+   - Scenario analysis and decision support.
+   - Crisis management and response planning.
+
+10. **Human Resources**:
+    - Recruitment and talent management.
+    - Employee performance analysis and development.
+    - Automating HR administrative tasks and employee inquiries.
